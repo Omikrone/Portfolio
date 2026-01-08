@@ -4,7 +4,7 @@ export const projectsData: Project[] = [
   {
     id: 1,
     title: "Chessboard library",
-    slug: "euphron-chessboard",
+    slug: "chessboard",
     description: "Une librairie de jeu d'échecs optimisée pour la performance et utilisable par des moteur d'échecs.",
     tags: ["React", "TypeScript", "Tailwind", "Recharts"],
     imageUrl: "https://placehold.co/600x400/png?text=Dashboard+Preview",

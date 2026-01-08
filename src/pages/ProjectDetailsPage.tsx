@@ -10,11 +10,11 @@ const ProjectDetailPage = () => {
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  console.log(slug)
 
   useEffect(() => {
     if (!slug) return;
-
-    // Trouver le projet correspondant au slug
+    
     const foundProject = projectsData.find((p) => p.slug === slug);
     setProject(foundProject || null);
 
@@ -24,8 +24,7 @@ const ProjectDetailPage = () => {
       return;
     }
 
-    // Charger le contenu Markdown
-    fetch(`/content/projects/${slug}.md`)
+    fetch(`/content/projects/${encodeURIComponent(slug)}.md`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Fichier Markdown non trouvé");
