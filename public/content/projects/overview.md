@@ -25,19 +25,3 @@ La mise en place d’un serveur de jeu, permettant de gérer des sessions et d�
 → [Chessgame](./chessgame.md)
 
 Ce découpage modulaire m’a permis de travailler sur un système cohérent, extensible et orienté performance, tout en gardant une séparation claire des responsabilités entre les différentes briques du projet.
-
-## Architecture & Conception
-
-### Version 0 (Prototype)
-
-Avant de développer le moteur d'échecs **Euphron**, j'ai d'abord choisi de développer les règles du jeu en lui-même ainsi que le serveur permettant de jouer au jeu d'échecs. Pour la première version de mon jeu d'échecs, pour des raisons de simplicité, j'ai décidé d'implémenter une version naïve du jeu, c'est-à-dire en **POO** (Programmation Orientée Objet), avec une classe pour chaque type de composant du jeu (classe `Chessboard`, classe abstraite `Piece` et toutes les classes qui en dérivent). Cette architecture possède l'avantage d'être plutôt simple d'implémentation, mais n'est pas du tout adaptée pour la recherche à grande échelle des noeuds, nécessaire pour des moteurs compétitifs.
-
-Pour le serveur de jeu, j'ai choisi d'utiliser le framework C++ (Crow)[https://crowcpp.org/master/], car il est plutôt simple d'intégration et supporte les `WebSockets`, ce qui me sera utile plus tard pour la communication avec **Euphron**.
-
-Voici un schéma de l'architecture haut-niveau de la version 0 de mon jeu d'échecs:
-[Schéma]
-
-
-### Version 1 (Version stable)
-
-Après ce premier jeu fonctionnel, pour pouvoir rendre le code modulaire et extensible pour le développement de mon moteur d'échecs, j'ai décidé de séparer la logique du jeu et du serveur. J'ai donc crée ma propre librairie statique `Chessboard`, qui agit comme une interface publique pour manier le jeu. De cette manière, la librarie est à la fois utilisable par le serveur de jeu (pour vérifier la légalité des coups), et par le moteur pour générer ses propres coups.
