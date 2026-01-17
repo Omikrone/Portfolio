@@ -21,7 +21,7 @@ export const projectsData: Project[] = [
     demoLink: "http://euphron.duckdns.org:49181/",
     repoLink: "https://github.com/Omikrone/Chessgame",
   },
-    {
+  {
     id: 3,
     slug: "test2",
     title: "Application Mobile Flutter",
