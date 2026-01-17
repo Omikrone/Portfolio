@@ -36,14 +36,14 @@ Après quelques recherches, j'ai compris que l'énorme majorité des moteurs d'�
 Nous pouvons donc représenter la position des différentes pièces avec la variable suivante (pseudo-code):
 ```cpp
 uint64_t all_pieces = 
-1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1
+  1 1 1 1 1 1 1 1
+  1 1 1 1 1 1 1 1
+  0 0 0 0 0 0 0 0
+  0 0 0 0 0 0 0 0
+  0 0 0 0 0 0 0 0
+  0 0 0 0 0 0 0 0
+  1 1 1 1 1 1 1 1
+  1 1 1 1 1 1 1 1
 ```
 
 Nous avons donc maintenant la représentation des positions de toutes les pièces sur un plateau d'échecs. Le problème est que nous ne pouvons ni distinguer le type d'une pièce (si c'est un pion ou une tour par exemple), ni sa couleur (blanche ou noire). La solution est de créer 14 autres bitboards (6 pour chaque type de pièce * 2 pour chaque couleur + 2 pour les positions des pièces d'une même couleur), qui stocke chacun la position d'un type de pièce spécifique pour une couleur. Nous avons donc au total 15 entiers non signés qui, ensemble, permettent de représenter la position de toutes les pièces sur le plateau.
