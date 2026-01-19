@@ -15,7 +15,7 @@ export const projectsData: Project[] = [
     id: 2,
     slug: "chessgame",
     title: "Chessgame server",
-    description: "Un serveur de jeu pour la gestion de parties d'échecs",
+    description: "Un serveur de jeu pour la gestion de parties d'échecs.",
     tags: ["C++", "Websocket", "REST"],
     imageUrl: "https://placehold.co/600x400/png?text=API+Backend",
     demoLink: "http://euphron.duckdns.org:49181/",
