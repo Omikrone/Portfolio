@@ -23,11 +23,11 @@ export const projectsData: Project[] = [
   },
   {
     id: 3,
-    slug: "test2",
-    title: "Application Mobile Flutter",
-    description: "Projet scolaire de 2ème année pour la gestion de notes de frais en entreprise, cross-platform.",
-    tags: ["Flutter", "Dart", "Firebase"],
-    imageUrl: "https://placehold.co/600x400/png?text=Mobile+App",
-    repoLink: "https://github.com",
+    slug: "euphron",
+    title: "Chess Engine",
+    description: "Un moteur d'échecs C++ implémentant des algorithmes de recherche classiques.",
+    tags: ["C++", "Engine", "UCI"],
+    imageUrl: "https://placehold.co/600x400/png?text=Chess+Engine",
+    repoLink: "https://github.com/Omikrone/Euphron",
   },
 ];

@@ -60,3 +60,22 @@ Le [tri MVV-LVA](https://www.chessprogramming.org/MVV-LVA) (*Most Valuable Victi
 Un problème majeur que j'ai rencontré lors du développement de mon moteur d'échecs était dû à [l'effet d'horizon](https://www.chessprogramming.org/Horizon_Effect). Lorsque le moteur atteignait la profondeur maximale prédéfinie, il évaluait la position telle quelle, sans prendre en compte si celle-ci était instable. Par exemple, si le moteur estimait avoir une position gagnante à la profondeur maximale, mais qu'il perdait inévitablement la dame au prochain coup, il allait quand même choisir cette variation, alors qu'à terme, nous savons qu'elle est perdante. C'est ce que l'on appelle communément l'effet d'horizon, car le moteur ne *voit* pas plus loin que la profondeur maximale définie.
 
 Une solution partielle à ce problème est d'implémenter la [quiescence search](https://www.chessprogramming.org/Quiescence_Search) (= recherche de calme), qui permet au moteur de continuer sa recherche jusqu'à ce qu'il atteigne une position calme. Une fois la profondeur maximale atteinte, on génère tous les coups de captures immédiates possibles, et on continue à appliquer alpha-bêta sur ces noeuds. La quiescence search est ensuite arrêtée lorsqu'il n'y a plus de captures directes possibles, cela signifie alors que l'on a atteint une position calme. Cette extension ralentit l'algorithme alpha-bêta, car cela ne fait pas partie de la recherche principale, mais c'est un mal nécessaire pour éviter des coups absurdes de la part du moteur.
+
+## Interface UCI
+
+Pour que mon moteur soit compatible avec mon serveur de jeu ainsi qu'avec d'autres moteurs ou GUI, j'ai décidé d'implémenter une interface [UCI](https://www.chessprogramming.org/UCI) (*Universal Chess Interface*) standard, afin de pouvoir communiquer avec Euphron. UCI est un protocole qui permet de définir certaines commandes pour un moteur d'échecs, comme pour lancer une recherche par exemple avec la commande `go depth 5`.
+
+Implémenter cette interface m'a forcé à l'utilisation de threads, car les commandes sont censés être asynchrones. En effet, l'utilisateur doit pouvoir laner une recherche avec `go`, mais également pouvoir l'interrompre lorsqu'il le souhaite avec `stop`. Par ailleurs, le protocole UCI se fait en temps normal sur l'entrée et la sortie standard (stdin/stdout). Cependant, pour des raisons de modularité, j'ai décidé d'implémenter en plus un wrapper HTTP, de sorte à ce qu'Euphron expose un point d'API pour l'entrée et la sortie de commandes.
+
+## Performances et limites
+
+Aujourd'hui, Euphron en est à sa version 0.3.0, et atteint des performances raisonnables. Avec 5 secondes de réflexion, il atteint généralement une profondeur de 4 - 5 (sans compter la profondeur supplémentaire engendrée par la *quiescence search*), et permet ainsi de jouer des parties correctes. Je n'ai pas encore eu l'occasion de tester son élo avec des GUI spécialement fait pour cela, mais si je devais l'estimer, je dirais qu'il tourne autour des 700 - 750 élos, ce qui correspond à un niveau de débutant confirmé.
+
+Toutefois, Euphron possède encore certaines limites foncamentales, qui l'empêche d'avoir un meilleur niveau. La principale limite ne se situe pas dans ses algorithmes de recherche, mais plutôt sur la performance de la librairie d'échecs sur laquelle il s'appuie, [Chessboard](https://github.com/Omikrone/Chessboard).En effet, pour construire son arbre de recherche, Euphron génère des millions ce coups, et si la librairie d'échecs est lente, alors elle ralentira inévitablement le moteur. la première étape pour améliorer la performance de mon moteur sera donc d'abord d'optimiser ma librairie. Ensuite, EUphron possède aussi une autre limite fondamentale, sur le fait que son évaluation de position se fait uniquement sur le matériel. Cela induit qu'il n'a pas vraiment de *plan* durant une partie, et qu'il réalise des coups assez absurdes, lorsqu'il n'y a pas de gains matériels directs.
+
+## Futures améliorations
+
+De nombreuses améliorations possibles sont encore à implémenter pour améliorer la performance d'Euphron, dont:
+- Evaluation positionnelle
+- Rercherche multi-threads
+- Implémentation de tables de transpositions
