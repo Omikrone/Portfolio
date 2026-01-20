@@ -6,7 +6,7 @@ Depuis la publication du papier de recherche [*Attention is all you need*](https
 
 On observe aujourd'hui une évolution toujours plus impressionnate de ces modèles qui se mettent à raisonner, devenir des agents, et leur évolution dans le futur reste complètement flou. C'est dans ce cadre précis que je voulais comprendre concrètement le fonctionnement de ces modèles, ainsi que leur architecture de base, le [Transformeur](https://fr.wikipedia.org/wiki/Transformeur).
 
-J'ai donc décidé de créer mon propre modèle de langage, **Mnemos**, en référence à la déesse grecque de la mémoire *Mnémosyne*. Mnemos est donc un modèle de langage implémenté *from scratch* sans utilisation de bibliothèque tierce (mis à part Numpy/CuPy pour les vecteurs) en Python. L'objectif de ce projet était surtout pédagogique, pour comprendre concrètement comment les différentes briques du Transformeur fonctionnaient. Le but à terme est qu'il puisse *parler* à peu près normalement, sans faire trop d'erreur, et que le texte de sortie ait un certain sens.
+J'ai donc décidé de créer mon propre modèle de langage, **Mnemos**, en référence à la divinité grecque de la mémoire *Mnémosyne*. Mnemos est donc un modèle de langage implémenté *from scratch* sans utilisation de bibliothèque tierce (mis à part Numpy/CuPy pour les vecteurs) en Python. L'objectif de ce projet était surtout pédagogique, pour comprendre concrètement comment les différentes briques du Transformeur fonctionnaient. Le but à terme est qu'il puisse *parler* à peu près normalement, sans faire trop d'erreur, et que le texte de sortie ait un certain sens.
 
 ## Architecture du modèle
 
@@ -31,3 +31,25 @@ Le token embedding est une matrice de taille (VOCAB_SIZE, EMBEDDING_DIM), dans l
 #### Positional Embedding : Ordre des tokens
 
 Le positional embedding est une matrice de taille (MAX_SEQ_LEN, EMBEDDING_DIM), avec MAX_SEQ_LEN le nombre de token que l'on donne au modèle durant l'entraînement. Il permet au modèle d'apprendre au modèle l'ordre des mots au cours de l'entraînement.
+
+## Mécanisme d'attention
+
+Avant l'apparition des Transformer, un des problèmes majeurs des modèles existants (comme les RNN) résidait dans le fait que ces derniers étaient dits *séquentiels*, c'est-à-dire que l'information d'un token au suivant, tout le long de la séquence. Par exemple, pour une phrase du type : "Le chat qui a traversé la rue était noir", l'accord du masculin et du singulier du mot "chat" était compliqué à garder, car l'information se diluait au fil de la séquence. Le nouveau mécanisme dit de **l'attention** introduit dans l'architecture du Transformer vient résoudre ce problème fondamental, et constitue ainsi la réelle révolution de cette architecture.
+
+### Self Attention
+
+Le mécanisme d'[auto-attention](https://www.ibm.com/fr-fr/think/topics/attention-mechanism) utilisé dans les Transformers se base sur l'utilisation de 3 vecteurs de poids:
+- Un vecteur de **requête** qui représente les informations recherchées par un token
+- Un vecteur de **clé** qui contient les différentes informations contenues par un token
+- Un vecteur de **valeur** qui, multipliés par les poids de l'attention de la séquence en cours, permet de récupérer les informations importantes pour un certain token
+
+L'utilisation de ces 3 matrices permet à chaque token d'appliquer plus ou moins d'attention aux autres tokens de la séquence, en fonction des informations que celui-ci cherchent, et que les autres possèdent. Ainsi, ce mécanisme possède l'avantage d'être indépendant de l'ordre des tokens.
+Ensuite, il suffit d'appliquer un **softmax** sur les poids d'attention de la séquence pour obtenir une distribution de probabilité, qui indique quels tokens sont les plus importants pour le token en cours. 
+
+En plus de l'auto-attention, il faut faire bien attention à ce que celle-ci soit *masquée*, c'est-à-dire que l'attention d'un token ne doit dépendre que des tokens précédents, et non des tokens futurs de la séquence. En effet, ce masque causal est important pour que le modèle ne puisse pas *tricher*.
+
+### Multi-Head Attention
+
+Un des problèmes engendrés par l'auto-attention (à une seule tête) est la perte d'informations pour chaque token. En effet, lorsque l'on pondère les poids d'attention entre chaque token, l'on perd de l'information sur un token précis. Une solution à ce problème est d'implémenter plusieurs têtes d'attention, qui calculeront chacune un score d'attention indépendamment des autres. Ceci permet à chacune de se concentrer sur un aspect différent de la séquence, par exemple les accords, la structure, ect. Ensuite, il suffit de concatétener les différents scores d'attention calculés.
+
+Pour mon modèle actuel, après quelques expérimentations empiriques et avec mes contraintes de temps/matériel, j'ai trouvé que 4 têtes d'attention était un bon compromis.
