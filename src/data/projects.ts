@@ -51,16 +51,44 @@ export const projectsData: Project[] = [
     longDescription: true
   },
   {
+    id: 5,
+    title: "Janus",
+    slug: "janus",
+    description: "Une backdoor en C++ persistante pour Windows.",
+    tags: ["C++", "Windows", "Backdoor"],
+    imageUrl: "/content/projects/janus/logo.png",
+    repoLink: "https://github.com/Omikrone/Janus",
+    category: 'personal',
+  },
+  {
     id: 101,
-    title: "Projet Web - E-Commerce",
-    slug: "school-ecommerce",
-    description: "Réalisation d'une site e-commerce en PHP/Symfony durant ma 2ème année de BUT.",
+    title: "AntarcticHell",
+    slug: "antarctichell",
+    description: "Développement d'un serious game sur les conditions climatiques extrêmes en Antarctique.",
     tags: ["PHP", "Symfony", "MySQL"],
     imageUrl: "https://placehold.co/600x400/png?text=School+Project",
     category: 'school'
   },
   {
     id: 102,
+    title: "Labyrinthe",
+    slug: "labyrinthe",
+    description: "Création d'une version numérique du jeu de société 'Labyrinthe' avec fonctionnalités multijoueurs.",
+    tags: ["Python", "Machine Learning", "Recommender Systems"],
+    imageUrl: "https://placehold.co/600x400/png?text=Final+Year+Project",
+    category: 'school'
+  },
+  {
+    id: 103,
+    title: "POOkemon",
+    slug: "pookemon",
+    description: "Développement d'un jeu de type Pokémon en Java à jouer dans la console.",
+    tags: ["Java", "Spring Boot", "PostgreSQL"],
+    imageUrl: "https://placehold.co/600x400/png?text=School+Project",
+    category: 'school'
+  },
+  {
+    id: 104,
     title: "Sujet de Stage - Zenbot",
     slug: "stage-but",
     description: "Développement d'un chatbot de support technique se basant sur des techniques de RAG.",
