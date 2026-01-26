@@ -1,8 +1,98 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #1e40af;
+  --color-secondary: #64748b;
+}
+
 @layer base {
   body {
     @apply bg-slate-50 text-slate-900 antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
+}
+
+.prose {
+  color: #1e293b;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mt-8 mb-4 text-slate-900;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold mt-8 mb-4 text-slate-800;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold mt-6 mb-3 text-slate-700;
+}
+
+.prose p {
+  @apply my-4 leading-relaxed text-slate-700; /* Ajout d'une couleur spécifique */
+}
+
+.prose ul, .prose ol {
+  @apply my-4;
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose li {
+  @apply my-2 text-slate-700; /* Ajout de couleur */
+  margin-left: 1.5em;
+}
+
+.prose code {
+  @apply bg-slate-100 px-1.5 py-0.5 rounded text-sm font-mono text-slate-800;
+}
+
+.prose pre {
+  @apply my-6 rounded-lg overflow-auto bg-slate-900 text-slate-100 p-4; /* Meilleur contraste pour les blocs de code */
+}
+
+.prose pre code {
+  @apply bg-transparent text-slate-100; /* Reset pour code dans pre */
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary pl-4 italic my-6 text-slate-600 bg-slate-50 p-4 rounded-r; /* Fond pour les citations */
+}
+
+.prose a {
+  @apply text-primary hover:text-slate-800 underline font-medium; /* Plus visible */
+}
+
+.prose img {
+  @apply my-6 rounded-lg shadow-md;
+}
+
+.prose table {
+  @apply my-6 w-full border-collapse shadow-sm rounded-lg overflow-hidden;
+}
+
+.prose th {
+  @apply bg-slate-100 p-3 text-left font-semibold text-slate-800 border-b border-slate-200;
+}
+
+.prose td {
+  @apply border border-slate-200 p-3 text-slate-700;
+}
+
+.prose strong {
+  @apply font-semibold text-slate-900;
+}
+
+.prose hr {
+  @apply my-8 border-slate-300;
+}
+
+.prose :where(ul > li)::marker {
+  color: var(--color-primary);
 }
