@@ -7,8 +7,8 @@ export const projectsData: Project[] = [
     slug: "mnemos",
     description: "Un modèle de langage (LLM) implémenté from scratch en Python, basé sur l'architecture Transformer.",
     tags: ["Python", "AI", "Transformer", "Deep Learning"],
-    imageUrl: "/content/images/mnemos_preview.jpg", // Placeholder path
-    repoLink: "https://youtube.com", // Placeholder or need user input? User said "j'ai déjà inclu un rapport", content exists in mnemos.md
+    imageUrl: "/content/projects/mnemos/logo.png",
+    repoLink: "https://github/Omikrone/Mnemos",
     category: 'personal',
     featured: true,
     longDescription: true
@@ -19,10 +19,12 @@ export const projectsData: Project[] = [
     slug: "chessboard",
     description: "Une librairie de jeu d'échecs optimisée pour la performance et utilisable par des moteur d'échecs.",
     tags: ["C++", "Library", "Performance"],
-    imageUrl: "https://placehold.co/600x400/png?text=Chessboard",
+    imageUrl: "/content/projects/chessboard/logo.png",
     demoLink: "http://euphron.duckdns.org:49181",
     repoLink: "https://github.com/Omikrone/Chessboard",
-    category: 'personal'
+    category: 'personal',
+    featured: true,
+    longDescription: true
   },
   {
     id: 3,
@@ -30,10 +32,11 @@ export const projectsData: Project[] = [
     slug: "chessgame",
     description: "Un serveur de jeu pour la gestion de parties d'échecs avec WebSockets.",
     tags: ["C++", "Websocket", "REST"],
-    imageUrl: "https://placehold.co/600x400/png?text=Chess+Server",
+    imageUrl: "/content/projects/chessgame/logo.png",
     demoLink: "http://euphron.duckdns.org:49181/",
     repoLink: "https://github.com/Omikrone/Chessgame",
-    category: 'personal'
+    category: 'personal',
+    longDescription: true
   },
   {
     id: 4,
@@ -41,11 +44,12 @@ export const projectsData: Project[] = [
     slug: "euphron",
     description: "Un moteur d'échecs C++ implémentant des algorithmes de recherche classiques (Alpha-Beta, etc.).",
     tags: ["C++", "Engine", "UCI"],
-    imageUrl: "https://placehold.co/600x400/png?text=Euphron+Engine",
+    imageUrl: "/content/projects/euphron/logo.png",
     repoLink: "https://github.com/Omikrone/Euphron",
-    category: 'personal'
+    category: 'personal',
+    featured: true,
+    longDescription: true
   },
-  // School Projects Placeholders
   {
     id: 101,
     title: "Projet Web - E-Commerce",
@@ -57,10 +61,10 @@ export const projectsData: Project[] = [
   },
   {
     id: 102,
-    title: "Sujet de Stage / Alternance",
+    title: "Sujet de Stage - Zenbot",
     slug: "stage-but",
-    description: "Développement d'outils internes pour l'entreprise d'accueil.",
-    tags: ["Fullstack", "Enterprise"],
+    description: "Développement d'un chatbot de support technique se basant sur des techniques de RAG.",
+    tags: ["RAG", "Enterprise"],
     imageUrl: "https://placehold.co/600x400/png?text=Internship",
     category: 'school'
   }

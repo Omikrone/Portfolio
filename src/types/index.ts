@@ -9,5 +9,5 @@ export interface Project {
     repoLink?: string;
     category: 'personal' | 'school';
     featured?: boolean;
-    longDescription?: boolean; // If true, tries to load markdown from /content/projects/{slug}.md
+    longDescription?: boolean;
 }

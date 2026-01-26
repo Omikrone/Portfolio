@@ -5,7 +5,7 @@ const ChessboardPage = () => {
   const [content, setContent] = useState<string>("");
 
   useEffect(() => {
-    fetch("/content/euphron/chessboard.md")
+    fetch("/content/projects/chessboard/report.md")
       .then((res) => res.text())
       .then(setContent);
   }, []);
