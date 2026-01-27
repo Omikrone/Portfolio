@@ -46,7 +46,7 @@ export const projectsData: Project[] = [
     title: "Euphron Chess Engine",
     slug: "euphron",
     description: "Un moteur d'échecs C++ implémentant des algorithmes de recherche classiques (Alpha-Beta, etc.).",
-    type: "IA",
+    type: "Algorithmie",
     languages: ["C++"],
     imageUrl: "/content/projects/euphron/logo.png",
     repoLink: "https://github.com/Omikrone/Euphron",
