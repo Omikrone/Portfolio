@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import MarkdownRenderer from '../components/MarkdownRenderer';
 import { projectsData } from '../data/projects';
+import { getProjectTypeColor, getLanguageColor, getCategoryColor } from '../utils/tagColors';
 
 const ProjectDetail: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -38,6 +39,9 @@ const ProjectDetail: React.FC = () => {
         );
     }
 
+    const typeColor = getProjectTypeColor(project.type);
+    const categoryColor = getCategoryColor(project.category);
+
     return (
         <div className="animate-fade-in pb-20">
             {/* Back Link */}
@@ -47,23 +51,38 @@ const ProjectDetail: React.FC = () => {
                 </Link>
             </div>
 
+            {/* Banner Image */}
+            {project.imageUrl && (
+                <div className="mb-12 rounded-3xl overflow-hidden h-64 md:h-96 relative group">
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10" />
+                    <img
+                        src={project.imageUrl}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                </div>
+            )}
+
             {/* Header */}
             <header className="mb-12 border-b border-white/10 pb-8">
                 <div className="flex flex-wrap gap-3 mb-6">
                     {/* Type Tag */}
-                    <span className="text-sm font-mono bg-purple-500/10 border border-purple-500/20 px-3 py-1 rounded text-purple-400">
+                    <span className={`text-sm font-mono ${typeColor.bg} border ${typeColor.border} px-3 py-1 rounded ${typeColor.text}`}>
                         {project.type}
                     </span>
 
                     {/* Language Tags */}
-                    {project.languages.map(lang => (
-                        <span key={lang} className="text-sm font-mono bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded text-blue-400">
-                            {lang}
-                        </span>
-                    ))}
+                    {project.languages.map(lang => {
+                        const langColor = getLanguageColor(lang);
+                        return (
+                            <span key={lang} className={`text-sm font-mono ${langColor.bg} border ${langColor.border} px-3 py-1 rounded ${langColor.text}`}>
+                                {lang}
+                            </span>
+                        );
+                    })}
 
                     {/* Context Tag */}
-                    <span className="text-sm font-mono bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded text-emerald-400">
+                    <span className={`text-sm font-mono ${categoryColor.bg} border ${categoryColor.border} px-3 py-1 rounded ${categoryColor.text}`}>
                         {project.category === 'personal' ? 'Personnel' : 'Scolaire'}
                     </span>
                 </div>
