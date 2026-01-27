@@ -15,7 +15,7 @@ export const projectTypeColors: Record<string, TagColor> = {
         border: "border-emerald-500/20",
         text: "text-emerald-400"
     },
-    "Algorithmie": {
+    "Algorithmique": {
         bg: "bg-orange-500/10",
         border: "border-orange-500/20",
         text: "text-orange-400"

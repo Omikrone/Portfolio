@@ -19,7 +19,7 @@ export const projectsData: Project[] = [
     title: "Chessboard Library",
     slug: "chessboard",
     description: "Une librairie de jeu d'échecs optimisée pour la performance et utilisable par des moteur d'échecs.",
-    type: "Algorithmie",
+    type: "Algorithmique",
     languages: ["C++"],
     imageUrl: "/content/projects/chessboard/logo.png",
     demoLink: "http://euphron.duckdns.org:49181",
@@ -46,7 +46,7 @@ export const projectsData: Project[] = [
     title: "Euphron Chess Engine",
     slug: "euphron",
     description: "Un moteur d'échecs C++ implémentant des algorithmes de recherche classiques (Alpha-Beta, etc.).",
-    type: "Algorithmie",
+    type: "Algorithmique",
     languages: ["C++"],
     imageUrl: "/content/projects/euphron/logo.png",
     repoLink: "https://github.com/Omikrone/Euphron",
@@ -73,6 +73,7 @@ export const projectsData: Project[] = [
     type: "Jeu Vidéo",
     languages: ["TypeScript"],
     imageUrl: "/content/projects/antarctichell/logo.png",
+    repoLink: "https://github.com/Omikrone/AntarcticHell",
     category: 'school'
   },
   {
@@ -82,7 +83,8 @@ export const projectsData: Project[] = [
     description: "Création d'une version numérique du jeu de société 'Labyrinthe' avec fonctionnalités multijoueurs.",
     type: "Jeu Vidéo",
     languages: ["Python"],
-    imageUrl: "https://placehold.co/600x400/png?text=Final+Year+Project",
+    imageUrl: "/content/projects/labyrinthe/logo.png",
+    repoLink: "https://github.com/Omikrone/Labyrinthe",
     category: 'school'
   },
   {
@@ -93,6 +95,7 @@ export const projectsData: Project[] = [
     type: "Jeu Vidéo",
     languages: ["Java"],
     imageUrl: "/content/projects/pookemon/logo.png",
+    repoLink: "https://github.com/Omikrone/POOkemon",
     category: 'school'
   },
   {
@@ -102,7 +105,7 @@ export const projectsData: Project[] = [
     description: "Développement d'un chatbot de support technique se basant sur des techniques de RAG.",
     type: "IA",
     languages: ["Python"],
-    imageUrl: "https://placehold.co/600x400/png?text=Internship",
+    imageUrl: "/content/projects/stage-but/logo.png",
     category: 'school'
   }
 ];

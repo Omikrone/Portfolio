@@ -11,9 +11,9 @@ interface TimelineItem {
 const timeline: TimelineItem[] = [
     {
         year: '2020 - 2023',
-        title: 'BAC Général & AbiBac',
+        title: 'BAC Général & Abitur',
         subtitle: 'Lycée International des Pontonniers, Strasbourg',
-        description: 'Spécialités Mathématiques et Physique-Chimie. Obtention du BAC français mention Bien et du BAC allemand (Abitur) en parallèle dans le cadre du cursus bilingue franco-allemand.',
+        description: 'Spécialités Mathématiques et Physique-Chimie. Obtention du BAC français mention Bien et du BAC allemand (Abitur) en parallèle dans le cadre du cursus international franco-allemand.',
         type: 'education'
     },
     {
@@ -27,14 +27,14 @@ const timeline: TimelineItem[] = [
         year: '2025',
         title: 'Stage - Développeur IA',
         subtitle: 'Zen Conseil (2,5 mois)',
-        description: 'Développement d\'un chatbot intelligent basé sur la technique RAG (Retrieval-Augmented Generation) pour le support technique. Utilisation de Python, LangChain et des modèles de langage.',
+        description: 'Développement d\'un chatbot de support technique intelligent basé sur la technique RAG (Retrieval-Augmented Generation) pour le support technique. Utilisation de Python, FAISS et des modèles de langage.',
         type: 'work'
     },
     {
         year: '2025 - 2026',
         title: 'Alternance - Développeur',
         subtitle: 'Cabinet d\'étude de la qualité de l\'air',
-        description: 'Développement d\'outils d\'analyse utilisant des modèles physiques et de l\'intelligence artificielle pour évaluer et prédire la qualité de l\'air.',
+        description: 'Développement d\'interfaces web pour afficher et manier les résultats d\'études de la qualité de l\'air. Programmation embarquée pour ajouter des fonctionnalités aux capteurs.',
         type: 'work'
     }
 ];
@@ -163,7 +163,7 @@ const About: React.FC = () => {
                             GitHub
                         </a>
                         <a
-                            href="https://linkedin.com/in/roman"
+                            href="https://www.linkedin.com/in/roman-nitzsche-63b548306/"
                             target="_blank"
                             rel="noreferrer"
                             className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium transition-all flex items-center gap-2"
