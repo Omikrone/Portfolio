@@ -16,6 +16,7 @@ const Layout: React.FC = () => {
   const navLinks = [
     { name: 'Accueil', path: '/' },
     { name: 'Projets', path: '/projects' },
+    { name: 'À propos', path: '/about' },
   ];
 
   return (
