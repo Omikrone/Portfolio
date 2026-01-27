@@ -10,7 +10,6 @@ const ProjectDetailPage = () => {
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  console.log(slug)
 
   useEffect(() => {
     if (!slug) return;
@@ -24,7 +23,7 @@ const ProjectDetailPage = () => {
       return;
     }
 
-    fetch(`/content/projects/${encodeURIComponent(slug)}.md`)
+    fetch(`/content/projects/${encodeURIComponent(slug)}/report.md`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Fichier Markdown non trouvé");
@@ -100,7 +99,7 @@ const ProjectDetailPage = () => {
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-6">
-          {project.tags.map((tag) => (
+          {project.languages.map((tag: string) => (
             <span
               key={tag}
               className="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full"

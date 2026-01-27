@@ -1,1 +1,14 @@
-export type { Project } from "./project";
+export interface Project {
+    id: number;
+    title: string;
+    slug: string;
+    description: string;
+    type: string;
+    languages: string[];
+    imageUrl?: string;
+    demoLink?: string;
+    repoLink?: string;
+    category: 'personal' | 'school';
+    featured?: boolean;
+    longDescription?: boolean;
+}
