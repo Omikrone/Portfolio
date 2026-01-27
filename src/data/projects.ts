@@ -72,7 +72,7 @@ export const projectsData: Project[] = [
     description: "Développement d'un serious game sur les conditions climatiques extrêmes en Antarctique.",
     type: "Jeu Vidéo",
     languages: ["TypeScript"],
-    imageUrl: "https://placehold.co/600x400/png?text=School+Project",
+    imageUrl: "/content/projects/antarctichell/logo.png",
     category: 'school'
   },
   {
@@ -92,7 +92,7 @@ export const projectsData: Project[] = [
     description: "Développement d'un jeu de type Pokémon en Java à jouer dans la console.",
     type: "Jeu Vidéo",
     languages: ["Java"],
-    imageUrl: "https://placehold.co/600x400/png?text=School+Project",
+    imageUrl: "/content/projects/pookemon/logo.png",
     category: 'school'
   },
   {
