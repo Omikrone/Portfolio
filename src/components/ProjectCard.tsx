@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import type { Project } from '../types';
+import { getProjectTypeColor, getLanguageColor, getCategoryColor } from '../utils/tagColors';
 
 interface ProjectCardProps {
   project: Project;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const typeColor = getProjectTypeColor(project.type);
+  const categoryColor = getCategoryColor(project.category);
+
   return (
     <div className="glass-card rounded-2xl overflow-hidden flex flex-col h-full group">
       {/* Image Area */}
@@ -22,11 +26,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       {/* Content */}
       <div className="p-6 flex-grow flex flex-col relative z-20">
         <div className="flex gap-2 mb-3 flex-wrap">
-          {project.tags.slice(0, 3).map(tag => (
-            <span key={tag} className="text-xs font-mono bg-white/5 border border-white/10 px-2 py-1 rounded text-primary">
-              {tag}
-            </span>
-          ))}
+          {/* Type Tag */}
+          <span className={`text-xs font-mono ${typeColor.bg} border ${typeColor.border} px-2 py-1 rounded ${typeColor.text}`}>
+            {project.type}
+          </span>
+
+          {/* Language Tags */}
+          {project.languages.map(lang => {
+            const langColor = getLanguageColor(lang);
+            return (
+              <span key={lang} className={`text-xs font-mono ${langColor.bg} border ${langColor.border} px-2 py-1 rounded ${langColor.text}`}>
+                {lang}
+              </span>
+            );
+          })}
+
+          {/* Context Tag */}
+          <span className={`text-xs font-mono ${categoryColor.bg} border ${categoryColor.border} px-2 py-1 rounded ${categoryColor.text}`}>
+            {project.category === 'personal' ? 'Personnel' : 'Scolaire'}
+          </span>
         </div>
 
         <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">

@@ -3,7 +3,8 @@ export interface Project {
     title: string;
     slug: string;
     description: string;
-    tags: string[];
+    type: string;
+    languages: string[];
     imageUrl?: string;
     demoLink?: string;
     repoLink?: string;

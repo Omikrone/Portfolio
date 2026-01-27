@@ -99,7 +99,7 @@ const ProjectDetailPage = () => {
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-6">
-          {project.tags.map((tag) => (
+          {project.languages.map((tag: string) => (
             <span
               key={tag}
               className="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full"

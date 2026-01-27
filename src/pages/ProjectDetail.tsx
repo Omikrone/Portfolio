@@ -50,11 +50,22 @@ const ProjectDetail: React.FC = () => {
             {/* Header */}
             <header className="mb-12 border-b border-white/10 pb-8">
                 <div className="flex flex-wrap gap-3 mb-6">
-                    {project.tags.map(tag => (
-                        <span key={tag} className="text-sm font-mono bg-primary/20 text-primary px-3 py-1 rounded">
-                            {tag}
+                    {/* Type Tag */}
+                    <span className="text-sm font-mono bg-purple-500/10 border border-purple-500/20 px-3 py-1 rounded text-purple-400">
+                        {project.type}
+                    </span>
+
+                    {/* Language Tags */}
+                    {project.languages.map(lang => (
+                        <span key={lang} className="text-sm font-mono bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded text-blue-400">
+                            {lang}
                         </span>
                     ))}
+
+                    {/* Context Tag */}
+                    <span className="text-sm font-mono bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded text-emerald-400">
+                        {project.category === 'personal' ? 'Personnel' : 'Scolaire'}
+                    </span>
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
                     {project.title}
