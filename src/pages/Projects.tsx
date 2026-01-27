@@ -1,20 +1,15 @@
 import React, { useState, useMemo } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { projectsData } from '../data/projects';
-import { getProjectTypeColor, getLanguageColor, getCategoryColor } from '../utils/tagColors';
+import { getProjectTypeColor, getCategoryColor } from '../utils/tagColors';
 
 const Projects: React.FC = () => {
     const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
-    const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<'all' | 'personal' | 'school'>('all');
 
     // Extract unique values for filters
     const allTypes = useMemo(() =>
         Array.from(new Set(projectsData.map(p => p.type))).sort(),
-        []
-    );
-    const allLanguages = useMemo(() =>
-        Array.from(new Set(projectsData.flatMap(p => p.languages))).sort(),
         []
     );
 
@@ -25,32 +20,23 @@ const Projects: React.FC = () => {
         );
     };
 
-    const toggleLanguage = (lang: string) => {
-        setSelectedLanguages(prev =>
-            prev.includes(lang) ? prev.filter(l => l !== lang) : [...prev, lang]
-        );
-    };
-
     // Filter projects
     const filteredProjects = useMemo(() => {
         return projectsData.filter(project => {
             const matchesType = selectedTypes.length === 0 || selectedTypes.includes(project.type);
-            const matchesLanguage = selectedLanguages.length === 0 ||
-                project.languages.some(lang => selectedLanguages.includes(lang));
             const matchesCategory = selectedCategory === 'all' || project.category === selectedCategory;
 
-            return matchesType && matchesLanguage && matchesCategory;
+            return matchesType && matchesCategory;
         });
-    }, [selectedTypes, selectedLanguages, selectedCategory]);
+    }, [selectedTypes, selectedCategory]);
 
     // Clear all filters
     const clearFilters = () => {
         setSelectedTypes([]);
-        setSelectedLanguages([]);
         setSelectedCategory('all');
     };
 
-    const hasActiveFilters = selectedTypes.length > 0 || selectedLanguages.length > 0 || selectedCategory !== 'all';
+    const hasActiveFilters = selectedTypes.length > 0 || selectedCategory !== 'all';
 
     return (
         <div className="min-h-screen pb-20 animate-fade-in">
@@ -63,10 +49,9 @@ const Projects: React.FC = () => {
                 </div>
 
                 {/* Filter Controls */}
-                <div className="glass-card rounded-2xl p-6 space-y-6">
-                    {/* Category Filter */}
-                    <div>
-                        <h3 className="text-sm font-semibold mb-3 text-text-muted uppercase tracking-wide">Catégorie</h3>
+                <div className="glass-card rounded-2xl p-6">
+                    <div className="flex flex-wrap items-center gap-4">
+                        {/* Category Filter */}
                         <div className="flex flex-wrap gap-2">
                             {['all', 'personal', 'school'].map((cat) => {
                                 const isSelected = selectedCategory === cat;
@@ -87,11 +72,11 @@ const Projects: React.FC = () => {
                                 );
                             })}
                         </div>
-                    </div>
 
-                    {/* Type Filter */}
-                    <div>
-                        <h3 className="text-sm font-semibold mb-3 text-text-muted uppercase tracking-wide">Type de projet</h3>
+                        {/* Separator */}
+                        <div className="hidden sm:block w-px h-8 bg-white/20"></div>
+
+                        {/* Type Filter */}
                         <div className="flex flex-wrap gap-2">
                             {allTypes.map((type) => {
                                 const isSelected = selectedTypes.includes(type);
@@ -110,45 +95,25 @@ const Projects: React.FC = () => {
                                 );
                             })}
                         </div>
-                    </div>
 
-                    {/* Language Filter */}
-                    <div>
-                        <h3 className="text-sm font-semibold mb-3 text-text-muted uppercase tracking-wide">Langage</h3>
-                        <div className="flex flex-wrap gap-2">
-                            {allLanguages.map((lang) => {
-                                const isSelected = selectedLanguages.includes(lang);
-                                const langColor = getLanguageColor(lang);
-                                return (
+                        {/* Active Filters Summary */}
+                        {hasActiveFilters && (
+                            <>
+                                <div className="hidden sm:block w-px h-8 bg-white/20"></div>
+                                <div className="flex items-center gap-3">
+                                    <span className="text-sm text-text-muted">
+                                        {filteredProjects.length} projet{filteredProjects.length !== 1 ? 's' : ''}
+                                    </span>
                                     <button
-                                        key={lang}
-                                        onClick={() => toggleLanguage(lang)}
-                                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all border ${isSelected
-                                                ? `${langColor.bg} ${langColor.border} ${langColor.text}`
-                                                : 'bg-background/50 text-text-muted border-white/10 hover:border-white/30'
-                                            }`}
+                                        onClick={clearFilters}
+                                        className="text-sm text-primary hover:text-white transition-colors"
                                     >
-                                        {lang}
+                                        Effacer
                                     </button>
-                                );
-                            })}
-                        </div>
+                                </div>
+                            </>
+                        )}
                     </div>
-
-                    {/* Active Filters Summary */}
-                    {hasActiveFilters && (
-                        <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                            <span className="text-sm text-text-muted">
-                                {filteredProjects.length} projet{filteredProjects.length !== 1 ? 's' : ''} trouvé{filteredProjects.length !== 1 ? 's' : ''}
-                            </span>
-                            <button
-                                onClick={clearFilters}
-                                className="text-sm text-primary hover:text-white transition-colors"
-                            >
-                                Effacer les filtres
-                            </button>
-                        </div>
-                    )}
                 </div>
             </header>
 

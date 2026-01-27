@@ -9,6 +9,7 @@ export const projectsData: Project[] = [
     type: "IA",
     languages: ["Python"],
     imageUrl: "/content/projects/mnemos/logo.png",
+    demoLink: "http://euphron.duckdns.org:49181",
     repoLink: "https://github/Omikrone/Mnemos",
     category: 'personal',
     featured: true,

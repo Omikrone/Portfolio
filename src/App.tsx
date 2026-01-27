@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import About from './pages/About';
+import Cybersecurity from './pages/Cybersecurity';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="projects" element={<Projects />} />
           <Route path="projects/:slug" element={<ProjectDetail />} />
           <Route path="about" element={<About />} />
+          <Route path="cybersecurity" element={<Cybersecurity />} />
         </Route>
       </Routes>
     </BrowserRouter>
