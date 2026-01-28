@@ -1,28 +1,25 @@
 import React, { useState, useMemo } from 'react';
 import ProjectCard from '../components/ProjectCard';
-import { projectsData } from '../data/projects';
+import { getSortedProjects } from '../data/projects';
 import { getProjectTypeColor, getCategoryColor } from '../utils/tagColors';
 
 const Projects: React.FC = () => {
     const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<'all' | 'personal' | 'school'>('all');
 
-    // Extract unique values for filters
     const allTypes = useMemo(() =>
-        Array.from(new Set(projectsData.map(p => p.type))).sort(),
+        Array.from(new Set(getSortedProjects().map(p => p.type))).sort(),
         []
     );
 
-    // Toggle filter selection
     const toggleType = (type: string) => {
         setSelectedTypes(prev =>
             prev.includes(type) ? prev.filter(t => t !== type) : [...prev, type]
         );
     };
 
-    // Filter projects
     const filteredProjects = useMemo(() => {
-        return projectsData.filter(project => {
+        return getSortedProjects().filter(project => {
             const matchesType = selectedTypes.length === 0 || selectedTypes.includes(project.type);
             const matchesCategory = selectedCategory === 'all' || project.category === selectedCategory;
 
@@ -30,7 +27,6 @@ const Projects: React.FC = () => {
         });
     }, [selectedTypes, selectedCategory]);
 
-    // Clear all filters
     const clearFilters = () => {
         setSelectedTypes([]);
         setSelectedCategory('all');
@@ -48,10 +44,8 @@ const Projects: React.FC = () => {
                     </p>
                 </div>
 
-                {/* Filter Controls */}
                 <div className="glass-card rounded-2xl p-6">
                     <div className="flex flex-wrap items-center gap-4">
-                        {/* Category Filter */}
                         <div className="flex flex-wrap gap-2">
                             {['all', 'personal', 'school'].map((cat) => {
                                 const isSelected = selectedCategory === cat;
@@ -73,10 +67,8 @@ const Projects: React.FC = () => {
                             })}
                         </div>
 
-                        {/* Separator */}
                         <div className="hidden sm:block w-px h-8 bg-white/20"></div>
 
-                        {/* Type Filter */}
                         <div className="flex flex-wrap gap-2">
                             {allTypes.map((type) => {
                                 const isSelected = selectedTypes.includes(type);
@@ -96,7 +88,6 @@ const Projects: React.FC = () => {
                             })}
                         </div>
 
-                        {/* Active Filters Summary */}
                         {hasActiveFilters && (
                             <>
                                 <div className="hidden sm:block w-px h-8 bg-white/20"></div>

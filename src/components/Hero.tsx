@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
                 <h1 className="text-5xl md:text-7xl font-bold leading-tight">
                     Je suis <span className="text-white">Roman</span>, <br />
                     <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                        Développeur Fullstack
+                        Étudiant en informatique
                     </span>
                 </h1>
                 <p className="text-text-muted text-lg md:text-xl max-w-2xl leading-relaxed">

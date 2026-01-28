@@ -11,6 +11,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const typeColor = getProjectTypeColor(project.type);
   const categoryColor = getCategoryColor(project.category);
 
+  const formatProjectDate = () => {
+    if (!project.endYear || project.startYear === project.endYear) {
+      return project.startYear.toString();
+    }
+    return `${project.startYear} — ${project.endYear}`;
+  };
+
   return (
     <Link
       to={`/projects/${project.slug}`}
@@ -18,6 +25,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     >
       {/* Image Area */}
       <div className="h-48 overflow-hidden relative">
+
+        {/* Badge de Date en haut à droite */}
+        <div className="absolute top-3 right-3 z-30">
+          <span className="bg-background/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md border border-white/10 shadow-lg">
+            {formatProjectDate()}
+          </span>
+        </div>
+        
         <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60 z-10" />
         <img
           src={project.imageUrl || `https://placehold.co/600x400/png?text=${project.title}`}
@@ -29,6 +44,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       {/* Content */}
       <div className="p-6 flex-grow flex flex-col relative z-20">
         <div className="flex gap-2 mb-3 flex-wrap">
+
           {/* Type Tag */}
           <span className={`text-xs font-mono ${typeColor.bg} border ${typeColor.border} px-2 py-1 rounded ${typeColor.text}`}>
             {project.type}
