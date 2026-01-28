@@ -5,6 +5,7 @@ import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import About from './pages/About';
 import Cybersecurity from './pages/Cybersecurity';
+import WriteUpPage from './pages/WriteUpPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="projects/:slug" element={<ProjectDetail />} />
           <Route path="about" element={<About />} />
           <Route path="cybersecurity" element={<Cybersecurity />} />
+          <Route path="cybersecurity/writeups/:slug" element={<WriteUpPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

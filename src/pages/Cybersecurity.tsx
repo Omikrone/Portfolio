@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import WriteUpCard from '../components/WriteUpCard';
+import { getAllCategories, getSortedWriteUps } from '../data/writeups';
 
 const Cybersecurity: React.FC = () => {
+    const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+
+    const allCategories = getAllCategories();
+
+    const toggleCategory = (category: string) => {
+        setSelectedCategories(prev =>
+            prev.includes(category) ? prev.filter(c => c !== category) : [...prev, category]
+        );
+    };
+
+    const filteredWriteUps = useMemo(() => {
+        const sorted = getSortedWriteUps();
+        if (selectedCategories.length === 0) return sorted;
+        
+        return sorted.filter(writeup =>
+            writeup.categories.some(cat => selectedCategories.includes(cat))
+        );
+    }, [selectedCategories]);
+
+    const clearFilters = () => {
+        setSelectedCategories([]);
+    };
+
     return (
         <div className="min-h-screen pb-20 animate-fade-in">
             <header className="mb-12 pt-10">
@@ -61,22 +86,59 @@ const Cybersecurity: React.FC = () => {
                 <div className="glass-card p-8 rounded-3xl relative overflow-hidden lg:col-span-2">
                     <div className="absolute top-0 left-0 w-40 h-40 bg-primary/10 rounded-full blur-[80px] -ml-20 -mt-20"></div>
 
-                    <h3 className="text-2xl font-bold mb-6">
-                        <span className="text-primary">📝</span> Write-ups
-                    </h3>
+                    <div className="flex justify-between items-center mb-6">
+                        <h3 className="text-2xl font-bold">
+                            <span className="text-primary">📝</span> Write-ups
+                        </h3>
+                        <span className="text-text-muted text-sm">
+                            {filteredWriteUps.length} article{filteredWriteUps.length !== 1 ? 's' : ''}
+                        </span>
+                    </div>
 
-                    <div className="space-y-4">
-                        <div className="bg-surface/30 rounded-xl p-6 border border-white/5 text-center">
+                    {/* Filtres par catégorie */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                        <span className="text-text-muted text-sm self-center mr-2">Filtrer :</span>
+                        {allCategories.map(category => (
+                            <button
+                                key={category}
+                                onClick={() => toggleCategory(category)}
+                                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all border ${
+                                    selectedCategories.includes(category)
+                                        ? 'bg-primary border-primary text-white'
+                                        : 'bg-background/50 text-text-muted border-white/10 hover:border-white/30'
+                                }`}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                        {selectedCategories.length > 0 && (
+                            <button
+                                onClick={clearFilters}
+                                className="px-4 py-2 rounded-lg text-sm font-medium border border-white/10 hover:border-white/30 text-text-muted hover:text-white"
+                            >
+                                Effacer
+                            </button>
+                        )}
+                    </div>
+
+                    {/* Grille des write-ups */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {filteredWriteUps.map(writeup => (
+                            <WriteUpCard key={writeup.id} writeup={writeup} />
+                        ))}
+                    </div>
+
+                    {filteredWriteUps.length === 0 && (
+                        <div className="text-center py-10 text-text-muted">
                             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/5 flex items-center justify-center">
-                                <span className="text-3xl">🔒</span>
+                                <span className="text-3xl">🔍</span>
                             </div>
-                            <h4 className="text-lg font-medium mb-2">Bientôt disponible</h4>
+                            <h4 className="text-lg font-medium mb-2">Aucun write-up trouvé</h4>
                             <p className="text-text-muted text-sm max-w-md mx-auto">
-                                Je travaille actuellement sur des write-ups détaillés de mes challenges CTF préférés.
-                                Revenez bientôt pour découvrir mes analyses et solutions!
+                                Aucun write-up ne correspond aux filtres sélectionnés.
                             </p>
                         </div>
-                    </div>
+                    )}
                 </div>
             </div>
 
@@ -84,12 +146,12 @@ const Cybersecurity: React.FC = () => {
             <section className="mt-12">
                 <h2 className="text-2xl font-bold mb-6">Compétences en sécurité</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {['Web Security', 'Cryptographie', 'Reverse Engineering', 'Network Security', 'Forensics', 'Steganography', 'SQLi / XSS', 'Binary Exploitation'].map((skill) => (
+                    {allCategories.map((skill) => (
                         <div
                             key={skill}
-                            className="glass p-4 rounded-xl text-center hover:bg-white/5 transition-colors"
+                            className="glass p-4 rounded-xl text-center hover:bg-white/5 transition-colors group"
                         >
-                            <span className="text-text-muted text-sm">{skill}</span>
+                            <span className="text-text-muted text-sm group-hover:text-white transition-colors">{skill}</span>
                         </div>
                     ))}
                 </div>
