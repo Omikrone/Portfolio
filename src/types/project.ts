@@ -1,10 +1,16 @@
 export interface Project {
-  id: number;
-  slug: string;
-  title: string;
-  description: string;
-  tags: string[];
-  imageUrl: string;
-  demoLink?: string;
-  repoLink: string;
+    id: number;
+    title: string;
+    slug: string;
+    description: string;
+    type: string;
+    languages: string[];
+    imageUrl?: string;
+    demoLink?: string;
+    repoLink?: string;
+    category: 'personal' | 'school' | 'professional';
+    featured?: boolean;
+    longDescription?: boolean;
+    startYear: number;
+    endYear: number;
 }
