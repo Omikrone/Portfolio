@@ -56,6 +56,7 @@ export const projectsData: Project[] = [
     type: "Algorithmique",
     languages: ["C++"],
     imageUrl: "/content/projects/euphron/logo.png",
+    demoLink: "http://euphron.duckdns.org:49181",
     repoLink: "https://github.com/Omikrone/Euphron",
     category: 'personal',
     featured: true,
@@ -74,6 +75,32 @@ export const projectsData: Project[] = [
     repoLink: "https://github.com/Omikrone/Janus",
     category: 'personal',
     startYear: 2023,
+    endYear: 2025
+  },
+  {
+    id: 6,
+    title: "Osabot",
+    slug: "osabot",
+    description: "Un bot Discord de support pour le serveur Minecraft Osalys",
+    type: "Développement",
+    languages: ["Python"],
+    imageUrl: "/content/projects/osabot/logo.png",
+    repoLink: "https://github.com/Omikrone/Osabot",
+    category: 'personal',
+    startYear: 2020,
+    endYear: 2022
+  },
+  {
+    id: 7,
+    title: "Bookify Mobile",
+    slug: "bookify-mobile",
+    description: "Développement d'une application mobile pour la gestion des livres.",
+    type: "Développement",
+    languages: ["Java"],
+    imageUrl: "/content/projects/bookify-mobile/logo.png",
+    repoLink: "https://github.com/Omikrone/bookify-mobile",
+    category: 'school',
+    startYear: 2025,
     endYear: 2025
   },
   {
