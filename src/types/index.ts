@@ -8,7 +8,9 @@ export interface Project {
     imageUrl?: string;
     demoLink?: string;
     repoLink?: string;
-    category: 'personal' | 'school';
+    category: 'personal' | 'school' | 'professional';
     featured?: boolean;
     longDescription?: boolean;
+    startYear?: number;
+    endYear?: number;
 }

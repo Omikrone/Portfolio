@@ -13,7 +13,9 @@ export const projectsData: Project[] = [
     repoLink: "https://github/Omikrone/Mnemos",
     category: 'personal',
     featured: true,
-    longDescription: true
+    longDescription: true,
+    startYear: 2025,
+    endYear: 2026
   },
   {
     id: 2,
@@ -27,7 +29,9 @@ export const projectsData: Project[] = [
     repoLink: "https://github.com/Omikrone/Chessboard",
     category: 'personal',
     featured: true,
-    longDescription: true
+    longDescription: true,
+    startYear: 2025,
+    endYear: 2026
   },
   {
     id: 3,
@@ -40,7 +44,9 @@ export const projectsData: Project[] = [
     demoLink: "http://euphron.duckdns.org:49181/",
     repoLink: "https://github.com/Omikrone/Chessgame",
     category: 'personal',
-    longDescription: true
+    longDescription: true,
+    startYear: 2025,
+    endYear: 2026
   },
   {
     id: 4,
@@ -53,7 +59,9 @@ export const projectsData: Project[] = [
     repoLink: "https://github.com/Omikrone/Euphron",
     category: 'personal',
     featured: true,
-    longDescription: true
+    longDescription: true,
+    startYear: 2025,
+    endYear: 2026
   },
   {
     id: 5,
@@ -65,6 +73,8 @@ export const projectsData: Project[] = [
     imageUrl: "/content/projects/janus/logo.png",
     repoLink: "https://github.com/Omikrone/Janus",
     category: 'personal',
+    startYear: 2023,
+    endYear: 2025
   },
   {
     id: 101,
@@ -75,7 +85,9 @@ export const projectsData: Project[] = [
     languages: ["TypeScript"],
     imageUrl: "/content/projects/antarctichell/logo.png",
     repoLink: "https://github.com/Omikrone/AntarcticHell",
-    category: 'school'
+    category: 'school',
+    startYear: 2025,
+    endYear: 2025
   },
   {
     id: 102,
@@ -86,7 +98,9 @@ export const projectsData: Project[] = [
     languages: ["Python"],
     imageUrl: "/content/projects/labyrinthe/logo.png",
     repoLink: "https://github.com/Omikrone/Labyrinthe",
-    category: 'school'
+    category: 'school',
+    startYear: 2024,
+    endYear: 2024
   },
   {
     id: 103,
@@ -97,7 +111,9 @@ export const projectsData: Project[] = [
     languages: ["Java"],
     imageUrl: "/content/projects/pookemon/logo.png",
     repoLink: "https://github.com/Omikrone/POOkemon",
-    category: 'school'
+    category: 'school',
+    startYear: 2024,
+    endYear: 2024
   },
   {
     id: 104,
@@ -107,6 +123,19 @@ export const projectsData: Project[] = [
     type: "IA",
     languages: ["Python"],
     imageUrl: "/content/projects/stage-but/logo.png",
-    category: 'school'
+    category: 'school',
+    startYear: 2025,
+    endYear: 2025
   }
 ];
+
+export const getSortedProjects = (): Project[] => {
+  return [...projectsData].sort((a, b) => {
+    if (a.endYear && b.endYear) {
+      return b.endYear - a.endYear;
+    }
+    if (a.endYear && !b.endYear) return -1;
+    if (!a.endYear && b.endYear) return 1;
+    return 0;
+  });
+};
