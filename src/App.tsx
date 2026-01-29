@@ -7,9 +7,13 @@ import About from './pages/About';
 import Cybersecurity from './pages/Cybersecurity';
 import WriteUpPage from './pages/WriteUpPage';
 
+const isProd = import.meta.env.PROD;
+
+const basename = isProd ? "/Portfolio" : "/";
+
 function App() {
   return (
-    <BrowserRouter basename="/Portfolio">
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

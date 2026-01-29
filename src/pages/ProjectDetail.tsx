@@ -12,7 +12,7 @@ const ProjectDetail: React.FC = () => {
 
     useEffect(() => {
         if (project?.longDescription) {
-            fetch(`./content/projects/${slug}/report.md`)
+            fetch(`/assets/projects/${slug}/report.md`)
                 .then(res => {
                     if (res.ok) return res.text();
                     throw new Error('Content not found');
