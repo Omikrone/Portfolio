@@ -7,9 +7,7 @@ import About from './pages/About';
 import Cybersecurity from './pages/Cybersecurity';
 import WriteUpPage from './pages/WriteUpPage';
 
-const isProd = import.meta.env.PROD;
-
-const basename = isProd ? "/Portfolio" : "/";
+const basename = "/";
 
 function App() {
   return (

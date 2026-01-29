@@ -1,5 +1,7 @@
 import type { WriteUp } from '../types';
 
+const getAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+
 export const writeups: WriteUp[] = [
     {
         id: 1,
@@ -11,7 +13,7 @@ export const writeups: WriteUp[] = [
         platform: "Root-Me",
         date: "2024-01-15",
         points: 100,
-        contentFilePath: "/assets/writeups/stegano-challenge-1/stegano-challenge-1.md"
+        contentFilePath: getAssetPath("/assets/writeups/stegano-challenge-1/stegano-challenge-1.md")
     },
     {
         id: 2,
@@ -23,7 +25,7 @@ export const writeups: WriteUp[] = [
         platform: "PicoCTF",
         date: "2024-02-01",
         points: 250,
-        contentFilePath: "/assets/writeups/reverse-elf-challenge/reverse-elf-challenge.md"
+        contentFilePath: getAssetPath("/assets/writeups/reverse-elf-challenge/reverse-elf-challenge.md")
     },
     {
         id: 3,
@@ -35,7 +37,7 @@ export const writeups: WriteUp[] = [
         platform: "HackTheBox",
         date: "2024-01-22",
         points: 150,
-        contentFilePath: "/assets/writeups/web-sqli-advanced/web-sqli-advanced.md"
+        contentFilePath: getAssetPath("/assets/writeups/web-sqli-advanced/web-sqli-advanced.md")
     },
     {
         id: 4,
@@ -47,7 +49,7 @@ export const writeups: WriteUp[] = [
         platform: "CTFd",
         date: "2024-01-10",
         points: 50,
-        contentFilePath: "/assets/writeups/crypto-custom-cipher/crypto-custom-cipher.md"
+        contentFilePath: getAssetPath("/assets/writeups/crypto-custom-cipher/crypto-custom-cipher.md")
     }
 ];
 

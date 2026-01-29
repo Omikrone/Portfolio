@@ -23,7 +23,7 @@ const ProjectDetailPage = () => {
       return;
     }
 
-    fetch(`/assets/projects/${encodeURIComponent(slug)}/report.md`)
+    fetch(`${import.meta.env.BASE_URL}assets/projects/${encodeURIComponent(slug)}/report.md`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Fichier Markdown non trouvé");
