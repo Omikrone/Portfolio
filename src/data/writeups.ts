@@ -11,7 +11,7 @@ export const writeups: WriteUp[] = [
         platform: "Root-Me",
         date: "2024-01-15",
         points: 100,
-        contentFilePath: "/content/writeups/stegano-challenge-1/stegano-challenge-1.md"
+        contentFilePath: "/assets/writeups/stegano-challenge-1/stegano-challenge-1.md"
     },
     {
         id: 2,
@@ -23,7 +23,7 @@ export const writeups: WriteUp[] = [
         platform: "PicoCTF",
         date: "2024-02-01",
         points: 250,
-        contentFilePath: "/writeups/reverse-elf-challenge.md"
+        contentFilePath: "/assets/writeups/reverse-elf-challenge/reverse-elf-challenge.md"
     },
     {
         id: 3,
@@ -35,7 +35,7 @@ export const writeups: WriteUp[] = [
         platform: "HackTheBox",
         date: "2024-01-22",
         points: 150,
-        contentFilePath: "/writeups/web-sqli-advanced.md"
+        contentFilePath: "/assets/writeups/web-sqli-advanced/web-sqli-advanced.md"
     },
     {
         id: 4,
@@ -47,7 +47,7 @@ export const writeups: WriteUp[] = [
         platform: "CTFd",
         date: "2024-01-10",
         points: 50,
-        contentFilePath: "/writeups/crypto-custom-cipher.md"
+        contentFilePath: "/assets/writeups/crypto-custom-cipher/crypto-custom-cipher.md"
     }
 ];
 
