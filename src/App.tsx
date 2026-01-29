@@ -9,7 +9,7 @@ import WriteUpPage from './pages/WriteUpPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Portfolio">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
