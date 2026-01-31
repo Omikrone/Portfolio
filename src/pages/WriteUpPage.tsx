@@ -96,7 +96,7 @@ const WriteUpPage: React.FC = () => {
                             </div>
                             <div className="flex items-center gap-2">
                                 <span>🏆</span>
-                                <span>{writeup.platform}</span>
+                                <span>{writeup.event}</span>
                                 {writeup.points && (
                                     <span className="font-bold text-secondary">
                                         • {writeup.points} points

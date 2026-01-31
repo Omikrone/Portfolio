@@ -67,7 +67,7 @@ const WriteUpCard: React.FC<WriteUpCardProps> = ({ writeup }) => {
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
                     <div className="flex items-center gap-4">
                         <div className="flex items-center gap-2">
-                            <span className="text-text-muted text-sm">{writeup.platform}</span>
+                            <span className="text-text-muted text-sm">{writeup.event}</span>
                             {writeup.points && (
                                 <span className="text-xs font-bold bg-secondary/20 text-secondary px-2 py-1 rounded">
                                     {writeup.points} pts

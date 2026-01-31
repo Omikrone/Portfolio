@@ -63,12 +63,12 @@ const Cybersecurity: React.FC = () => {
                         <div className="bg-surface/50 rounded-xl p-4 border border-white/5">
                             <div className="flex justify-between items-end mb-2">
                                 <span className="text-text-muted text-sm">Score</span>
-                                <span className="text-2xl font-bold text-primary">3000+ pts</span>
+                                <span className="text-2xl font-bold text-primary">3295 pts</span>
                             </div>
                             <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
                                 <div className="bg-gradient-to-r from-secondary to-primary w-[75%] h-full rounded-full"></div>
                             </div>
-                            <p className="text-xs text-text-muted mt-2 text-right">Top 1% Global Rank</p>
+                            <p className="text-xs text-text-muted mt-2 text-right">2924ème place au classement mondial</p>
                         </div>
 
                         <a
