@@ -5,7 +5,7 @@ export interface WriteUp {
     description: string;
     categories: string[];
     difficulty: 'Débutant' | 'Intermédiaire' | 'Avancé';
-    event: string;
+    eventId?: string;
     date: string;
     imageUrl?: string;
     featured?: boolean;

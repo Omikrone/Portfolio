@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import type { WriteUp } from '../types';
+import { getEventById } from '../data/events';
 
 interface WriteUpCardProps {
     writeup: WriteUp;
@@ -23,6 +24,8 @@ const WriteUpCard: React.FC<WriteUpCardProps> = ({ writeup }) => {
             year: 'numeric'
         });
     };
+
+    const event = writeup.eventId ? getEventById(writeup.eventId) : null;
 
     return (
         <Link
@@ -67,7 +70,9 @@ const WriteUpCard: React.FC<WriteUpCardProps> = ({ writeup }) => {
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
                     <div className="flex items-center gap-4">
                         <div className="flex items-center gap-2">
-                            <span className="text-text-muted text-sm">{writeup.event}</span>
+                            {event && (
+                                <span className="text-text-muted text-sm">{event.name}</span>
+                            )}
                             {writeup.points && (
                                 <span className="text-xs font-bold bg-secondary/20 text-secondary px-2 py-1 rounded">
                                     {writeup.points} pts
