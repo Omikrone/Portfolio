@@ -220,10 +220,10 @@ const Cybersecurity: React.FC = () => {
 
             <div className="mt-12 text-center">
                 <Link
-                    to="/projects"
+                    to="/"
                     className="inline-flex items-center gap-2 text-primary hover:text-white transition-colors text-sm font-medium"
                 >
-                    <span>←</span> Retour aux projets
+                    <span>←</span> Retour à l'accueil
                 </Link>
             </div>
         </div>

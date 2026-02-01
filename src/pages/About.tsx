@@ -42,58 +42,52 @@ const timeline: TimelineItem[] = [
 const About: React.FC = () => {
     return (
         <div className="animate-fade-in pb-20">
-            {/* Hero Section */}
             <section className="mb-16">
                 <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
                     À propos
                 </h1>
                 <p className="text-xl text-text-muted max-w-3xl leading-relaxed">
-                    Passionné par l'informatique et l'intelligence artificielle, je suis un développeur
-                    en formation avec un intérêt particulier pour les systèmes complexes,
-                    l'algorithmique et le machine learning.
                 </p>
             </section>
 
-            {/* About Me Card */}
             <section className="mb-20">
                 <div className="glass-card rounded-3xl p-8 md:p-12">
                     <div className="flex flex-col md:flex-row gap-8 items-start">
-                        {/* Avatar/Icon */}
                         <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
                             <span className="text-4xl md:text-5xl">👨‍💻</span>
                         </div>
 
                         <div className="flex-grow">
-                            <h2 className="text-2xl md:text-3xl font-bold mb-4">Roman</h2>
+                            <h2 className="text-2xl md:text-3xl font-bold mb-4">Roman Nitzsche</h2>
                             <p className="text-text-muted leading-relaxed mb-6">
                                 Étudiant en BUT Informatique à l'IUT d'Illkirch, je me passionne pour le développement
                                 de projets innovants mêlant programmation bas-niveau et intelligence artificielle.
                                 Mon parcours franco-allemand m'a apporté une ouverture d'esprit et une rigueur
                                 que j'applique dans chacun de mes projets.
                             </p>
-                            <p className="text-text-muted leading-relaxed">
-                                Mes domaines de prédilection incluent le <span className="text-white font-medium">C++</span> pour
-                                les performances, <span className="text-white font-medium">Python</span> pour l'IA et le prototypage,
-                                ainsi que les technologies web modernes comme <span className="text-white font-medium">React</span> et <span className="text-white font-medium">TypeScript</span>.
+                            <p className="text-text-muted leading-relaxed mb-6">
+                                Avec 7 ans d'expérience en programmation, mes centres d'intérêt tournent principalement 
+                                autour de l'<span className="text-white font-medium">intelligence artificielle</span> et 
+                                de la <span className="text-white font-medium">cybersécurité</span>, deux domaines 
+                                complémentaires qui me permettent d'explorer la technologie sous différents angles.
                             </p>
 
-                            {/* Quick Stats */}
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                                 <div className="text-center p-4 rounded-xl bg-white/5">
-                                    <div className="text-2xl font-bold text-primary">3+</div>
-                                    <div className="text-xs text-text-muted">Années de code</div>
+                                    <div className="text-2xl font-bold text-primary">7</div>
+                                    <div className="text-xs text-text-muted">Années de pratique</div>
                                 </div>
                                 <div className="text-center p-4 rounded-xl bg-white/5">
-                                    <div className="text-2xl font-bold text-primary">5+</div>
-                                    <div className="text-xs text-text-muted">Langages</div>
+                                    <div className="text-2xl font-bold text-primary">8</div>
+                                    <div className="text-xs text-text-muted">Langages de programmation</div>
                                 </div>
                                 <div className="text-center p-4 rounded-xl bg-white/5">
-                                    <div className="text-2xl font-bold text-primary">IA</div>
-                                    <div className="text-xs text-text-muted">Spécialité</div>
+                                    <div className="text-2xl font-bold text-primary">IA & Cyber</div>
+                                    <div className="text-xs text-text-muted">Intérêts</div>
                                 </div>
                                 <div className="text-center p-4 rounded-xl bg-white/5">
                                     <div className="text-2xl font-bold text-primary">🇫🇷🇩🇪</div>
-                                    <div className="text-xs text-text-muted">Bilingue</div>
+                                    <div className="text-xs text-text-muted">Franco-Allemand</div>
                                 </div>
                             </div>
                         </div>
@@ -101,25 +95,99 @@ const About: React.FC = () => {
                 </div>
             </section>
 
-            {/* Timeline Section */}
+            <section className="mb-20 space-y-12">
+                <div className="glass-card rounded-3xl p-8">
+                    <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span className="text-2xl">🌍</span> Langues
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="text-lg">🇫🇷</span>
+                                <h4 className="font-semibold text-white">Français</h4>
+                            </div>
+                            <p className="text-sm text-text-muted">Langue maternelle</p>
+                        </div>
+                        <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="text-lg">🇩🇪</span>
+                                <h4 className="font-semibold text-white">Allemand</h4>
+                            </div>
+                            <p className="text-sm text-text-muted">Langue paternelle</p>
+                        </div>
+                        <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="text-lg">🇬🇧</span>
+                                <h4 className="font-semibold text-white">Anglais</h4>
+                            </div>
+                            <p className="text-sm text-text-muted">Maîtrise fluide</p>
+                        </div>
+                        <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="text-lg">🇨🇳</span>
+                                <h4 className="font-semibold text-white">Chinois</h4>
+                            </div>
+                            <p className="text-sm text-text-muted">En apprentissage</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="glass-card rounded-3xl p-8">
+                    <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span className="text-2xl">💻</span> Stack Technique
+                    </h3>
+                    
+                    <div className="space-y-6">
+                        <div>
+                            <h4 className="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Langages de Programmation</h4>
+                            <div className="flex flex-wrap gap-2">
+                                {['Python', 'C/C++', 'TypeScript', 'JavaScript', 'Java', 'C#', 'Bash', 'PHP', 'SQL'].map((lang) => (
+                                    <span key={lang} className="px-4 py-2 rounded-lg bg-primary/10 border border-primary/30 text-white text-sm font-medium">
+                                        {lang}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 className="text-sm font-semibold text-secondary uppercase tracking-wide mb-3">Frameworks & Libraries</h4>
+                            <div className="flex flex-wrap gap-2">
+                                {['React', 'Angular', 'Laravel', 'Express', 'Next.js', 'React Native'].map((framework) => (
+                                    <span key={framework} className="px-4 py-2 rounded-lg bg-secondary/10 border border-secondary/30 text-white text-sm font-medium">
+                                        {framework}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 className="text-sm font-semibold text-white/70 uppercase tracking-wide mb-3">Outils & Environnement</h4>
+                            <div className="flex flex-wrap gap-2">
+                                {['Docker', 'Git', 'Figma', 'Linux', 'VS Code'].map((tool) => (
+                                    <span key={tool} className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-text-muted text-sm font-medium">
+                                        {tool}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section>
                 <h2 className="text-3xl font-bold mb-10">Mon parcours</h2>
 
                 <div className="relative">
-                    {/* Timeline Line */}
                     <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-primary/20" />
 
-                    {/* Timeline Items */}
                     <div className="space-y-8">
                         {timeline.map((item, index) => (
                             <div key={index} className="relative pl-12 md:pl-20">
-                                {/* Timeline Dot */}
                                 <div className={`absolute left-2 md:left-6 w-4 h-4 rounded-full border-2 ${item.type === 'work'
                                         ? 'bg-secondary border-secondary'
                                         : 'bg-primary border-primary'
                                     }`} />
 
-                                {/* Content Card */}
                                 <div className="glass-card rounded-2xl p-6 hover:bg-white/10 transition-colors">
                                     <div className="flex flex-wrap items-center gap-3 mb-3">
                                         <span className={`text-xs font-mono px-3 py-1 rounded ${item.type === 'work'
@@ -145,7 +213,6 @@ const About: React.FC = () => {
                 </div>
             </section>
 
-            {/* Contact CTA */}
             <section className="mt-20 text-center">
                 <div className="glass-card rounded-3xl p-8 md:p-12">
                     <h2 className="text-2xl md:text-3xl font-bold mb-4">Envie de collaborer ?</h2>
