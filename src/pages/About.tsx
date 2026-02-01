@@ -41,17 +41,19 @@ const timeline: TimelineItem[] = [
 
 const About: React.FC = () => {
     return (
-        <div className="animate-fade-in pb-20">
-            <section className="mb-16">
-                <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
+        <div className="animate-fade-in pb-12 md:pb-20">
+            <section className="mb-8 md:mb-16">
+                <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
                     À propos
                 </h1>
-                <p className="text-xl text-text-muted max-w-3xl leading-relaxed">
+                <p className="text-base md:text-xl text-text-muted max-w-3xl leading-relaxed">
+                    Développeur passionné avec 7 ans d'expérience en programmation, je me spécialise 
+                    dans l'intelligence artificielle et la cybersécurité.
                 </p>
             </section>
 
-            <section className="mb-20">
-                <div className="glass-card rounded-3xl p-8 md:p-12">
+            <section className="mb-12 md:mb-20">
+                <div className="glass-card rounded-3xl p-6 md:p-8 lg:p-12">
                     <div className="flex flex-col md:flex-row gap-8 items-start">
                         <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
                             <span className="text-4xl md:text-5xl">👨‍💻</span>
@@ -72,18 +74,18 @@ const About: React.FC = () => {
                                 complémentaires qui me permettent d'explorer la technologie sous différents angles.
                             </p>
 
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                                <div className="text-center p-4 rounded-xl bg-white/5">
-                                    <div className="text-2xl font-bold text-primary">7</div>
-                                    <div className="text-xs text-text-muted">Années de pratique</div>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-6 md:mt-8">
+                                <div className="text-center p-3 md:p-4 rounded-xl bg-white/5">
+                                    <div className="text-xl md:text-2xl font-bold text-primary">7</div>
+                                    <div className="text-[10px] md:text-xs text-text-muted">Années de pratique</div>
                                 </div>
-                                <div className="text-center p-4 rounded-xl bg-white/5">
-                                    <div className="text-2xl font-bold text-primary">8</div>
-                                    <div className="text-xs text-text-muted">Langages de programmation</div>
+                                <div className="text-center p-3 md:p-4 rounded-xl bg-white/5">
+                                    <div className="text-xl md:text-2xl font-bold text-primary">8</div>
+                                    <div className="text-[10px] md:text-xs text-text-muted">Langages de programmation</div>
                                 </div>
-                                <div className="text-center p-4 rounded-xl bg-white/5">
-                                    <div className="text-2xl font-bold text-primary">IA & Cyber</div>
-                                    <div className="text-xs text-text-muted">Intérêts</div>
+                                <div className="text-center p-3 md:p-4 rounded-xl bg-white/5">
+                                    <div className="text-xl md:text-2xl font-bold text-primary">IA & Cyber</div>
+                                    <div className="text-[10px] md:text-xs text-text-muted">Intérêts</div>
                                 </div>
                                 <div className="text-center p-4 rounded-xl bg-white/5">
                                     <div className="text-2xl font-bold text-primary">🇫🇷🇩🇪</div>

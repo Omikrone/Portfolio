@@ -68,7 +68,6 @@ const ProjectDetailPage = () => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      {/* En-tête du projet */}
       <div className="mb-8">
         <Link
           to="/"
@@ -97,7 +96,6 @@ const ProjectDetailPage = () => {
           {project.description}
         </p>
 
-        {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-6">
           {project.languages.map((tag: string) => (
             <span
@@ -109,7 +107,6 @@ const ProjectDetailPage = () => {
           ))}
         </div>
 
-        {/* Liens du projet */}
         <div className="flex flex-wrap gap-4 mb-10">
           {project.demoLink && (
             <a
@@ -138,12 +135,10 @@ const ProjectDetailPage = () => {
         </div>
       </div>
 
-      {/* Contenu Markdown */}
       <div className="prose prose-lg max-w-none">
         <MarkdownPage content={content} />
       </div>
 
-      {/* Section de navigation */}
       <div className="mt-12 pt-8 border-t border-slate-200">
         <Link
           to="/"

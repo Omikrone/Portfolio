@@ -54,7 +54,6 @@ const WriteUpPage: React.FC = () => {
         <div className="min-h-screen pb-20 animate-fade-in">
             <header className="mb-12 pt-10">
                 <div className="max-w-4xl mx-auto px-4">
-                    {/* Navigation */}
                     <div className="mb-8">
                         <Link
                             to="/cybersecurity"
@@ -64,7 +63,6 @@ const WriteUpPage: React.FC = () => {
                         </Link>
                     </div>
 
-                    {/* En-tête du write-up */}
                     <div className="glass-card rounded-3xl p-8 mb-8">
                         <div className="flex flex-wrap gap-2 mb-4">
                             {writeup.categories.map(cat => (
@@ -96,7 +94,7 @@ const WriteUpPage: React.FC = () => {
                             </div>
                             <div className="flex items-center gap-2">
                                 <span>🏆</span>
-                                <span>{writeup.event}</span>
+                                <span>{writeup.eventId}</span>
                                 {writeup.points && (
                                     <span className="font-bold text-secondary">
                                         • {writeup.points} points
@@ -108,7 +106,6 @@ const WriteUpPage: React.FC = () => {
                 </div>
             </header>
 
-            {/* Contenu markdown */}
             <div className="max-w-4xl mx-auto px-4">
                 {loading ? (
                     <div className="text-center py-20">

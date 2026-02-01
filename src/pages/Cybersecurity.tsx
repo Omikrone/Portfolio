@@ -60,28 +60,28 @@ const Cybersecurity: React.FC = () => {
                 </div>
             </header>
 
-            <div className="glass-card p-6 rounded-3xl relative overflow-hidden mb-8">
+            <div className="glass-card p-4 md:p-6 rounded-3xl relative overflow-hidden mb-8">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/20 rounded-full blur-[60px] -mr-10 -mt-10"></div>
                 
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 bg-[#2a2a2a] rounded-full flex items-center justify-center font-bold text-secondary text-xl flex-shrink-0">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+                    <div className="flex items-center gap-3 md:gap-4 w-full md:w-auto">
+                        <div className="w-12 h-12 md:w-14 md:h-14 bg-[#2a2a2a] rounded-full flex items-center justify-center font-bold text-secondary text-lg md:text-xl flex-shrink-0">
                             R
                         </div>
                         <div>
-                            <p className="text-sm text-text-muted">Root-Me Profile</p>
-                            <p className="font-bold text-lg text-white">Omikrone</p>
+                            <p className="text-xs md:text-sm text-text-muted">Root-Me Profile</p>
+                            <p className="font-bold text-base md:text-lg text-white">Omikrone</p>
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-8">
+                    <div className="flex items-center gap-4 md:gap-8 w-full md:w-auto justify-around md:justify-start">
                         <div className="text-center">
-                            <p className="text-sm text-text-muted mb-1">Score</p>
-                            <p className="text-3xl font-bold text-primary">3295 pts</p>
+                            <p className="text-xs md:text-sm text-text-muted mb-1">Score</p>
+                            <p className="text-2xl md:text-3xl font-bold text-primary">3295 pts</p>
                         </div>
                         <div className="text-center">
-                            <p className="text-sm text-text-muted mb-1">Classement mondial</p>
-                            <p className="text-xl font-bold text-secondary">2924ème</p>
+                            <p className="text-xs md:text-sm text-text-muted mb-1">Classement</p>
+                            <p className="text-lg md:text-xl font-bold text-secondary">2924ème</p>
                         </div>
                     </div>
 
@@ -89,21 +89,21 @@ const Cybersecurity: React.FC = () => {
                         href="https://www.root-me.org/Omikrone"
                         target="_blank"
                         rel="noreferrer"
-                        className="px-6 py-3 rounded-lg border border-secondary/50 text-secondary hover:bg-secondary hover:text-white transition-all font-medium text-sm whitespace-nowrap"
+                        className="w-full md:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg border border-secondary/50 text-secondary hover:bg-secondary hover:text-white transition-all font-medium text-xs md:text-sm text-center whitespace-nowrap"
                     >
                         Voir le profil →
                     </a>
                 </div>
             </div>
 
-            <div className="glass-card p-8 rounded-3xl relative overflow-hidden">
+            <div className="glass-card p-4 md:p-8 rounded-3xl relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-40 h-40 bg-primary/10 rounded-full blur-[80px] -ml-20 -mt-20"></div>
 
-                <div className="flex justify-between items-center mb-6">
-                    <h3 className="text-2xl font-bold">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 md:mb-6 gap-2">
+                    <h3 className="text-xl md:text-2xl font-bold">
                         <span className="text-primary">📝</span> Write-ups
                     </h3>
-                    <span className="text-text-muted text-sm">
+                    <span className="text-text-muted text-xs md:text-sm">
                         {filteredWriteUps.length} article{filteredWriteUps.length !== 1 ? 's' : ''}
                     </span>
                 </div>

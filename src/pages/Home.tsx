@@ -10,14 +10,14 @@ const Home: React.FC = () => {
         .slice(0, 3);
 
     return (
-        <div className="space-y-20 pb-20">
+        <div className="space-y-12 md:space-y-20 pb-12 md:pb-20">
             <Hero />
 
             <section className="animate-fade-in-up delay-200">
-                <div className="flex justify-between items-end mb-10">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 md:mb-10 gap-4">
                     <div className="space-y-2">
-                        <h2 className="text-3xl font-bold">Projets à la une</h2>
-                        <p className="text-text-muted">Une sélection de mes travaux les plus récents</p>
+                        <h2 className="text-2xl md:text-3xl font-bold">Projets à la une</h2>
+                        <p className="text-text-muted text-sm md:text-base">Une sélection de mes travaux les plus récents</p>
                     </div>
                     <Link
                         to="/projects"
@@ -28,13 +28,13 @@ const Home: React.FC = () => {
                     </Link>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {featuredProjects.map((project) => (
                         <ProjectCard key={project.id} project={project} />
                     ))}
                 </div>
 
-                <div className="mt-8 md:hidden flex justify-center">
+                <div className="mt-6 md:mt-8 md:hidden flex justify-center">
                     <Link
                         to="/projects"
                         className="text-primary hover:text-white transition-colors text-sm font-medium flex items-center gap-2"
@@ -46,7 +46,7 @@ const Home: React.FC = () => {
             </section>
 
             <section className="animate-fade-in-up delay-300">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                     <Link
                         to="/projects"
                         className="glass-card p-8 rounded-3xl hover:bg-white/10 transition-all duration-300 group"
