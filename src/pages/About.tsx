@@ -44,7 +44,7 @@ const About: React.FC = () => {
         <div className="animate-fade-in pb-12 md:pb-20">
             <section className="mb-8 md:mb-16">
                 <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
-                    À propos
+                    Profil
                 </h1>
                 <p className="text-base md:text-xl text-text-muted max-w-3xl leading-relaxed">
                     Développeur passionné avec 7 ans d'expérience en programmation, je me spécialise 
@@ -55,8 +55,8 @@ const About: React.FC = () => {
             <section className="mb-12 md:mb-20">
                 <div className="glass-card rounded-3xl p-6 md:p-8 lg:p-12">
                     <div className="flex flex-col md:flex-row gap-8 items-start">
-                        <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
-                            <span className="text-4xl md:text-5xl">👨‍💻</span>
+                        <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0 overflow-hidden">
+                            <img src="/assets/profile/portrait.jpg" alt="Roman Nitzsche" className="w-full h-full object-cover" />
                         </div>
 
                         <div className="flex-grow">
@@ -239,6 +239,23 @@ const About: React.FC = () => {
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                             LinkedIn
+                        </a>
+                        <a
+                            href="/assets/profile/cv.pdf"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="bg-secondary hover:bg-secondary/90 text-white px-6 py-3 rounded-lg font-medium transition-all flex items-center gap-2"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            Voir mon CV
+                        </a>
+                        <a
+                            href="/assets/profile/cv.pdf"
+                            download="CV_Roman_Nitzsche.pdf"
+                            className="glass hover:bg-white/10 text-white px-6 py-3 rounded-lg font-medium transition-all flex items-center gap-2"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Télécharger CV
                         </a>
                     </div>
                 </div>
