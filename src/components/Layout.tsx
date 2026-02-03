@@ -22,7 +22,7 @@ const Layout: React.FC = () => {
     { name: 'Accueil', path: '/' },
     { name: 'Projets', path: '/projects' },
     { name: 'Cybersécurité', path: '/cybersecurity' },
-    { name: 'À propos', path: '/about' },
+    { name: 'Profil', path: '/about' },
   ];
 
   return (
