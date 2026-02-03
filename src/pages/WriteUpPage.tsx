@@ -16,13 +16,22 @@ const WriteUpPage: React.FC = () => {
     useEffect(() => {
         if (writeup) {
             fetch(writeup.contentFilePath)
-                .then(response => response.text())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Content not found');
+                    }
+                    return response.text();
+                })
                 .then(text => {
+                    if (text.trim().startsWith('<!doctype') || text.trim().startsWith('<html')) {
+                        throw new Error('Invalid content type');
+                    }
                     setContent(text);
                     setLoading(false);
                 })
                 .catch(err => {
                     console.error('Erreur lors du chargement du write-up:', err);
+                    setContent('');
                     setLoading(false);
                 });
         }
@@ -112,7 +121,7 @@ const WriteUpPage: React.FC = () => {
                         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary mx-auto mb-4"></div>
                         <p className="text-text-muted">Chargement du write-up...</p>
                     </div>
-                ) : (
+                ) : content ? (
                     <div className="glass-card rounded-3xl p-8">
                         <ReactMarkdown
                             remarkPlugins={[remarkGfm]}
@@ -182,6 +191,10 @@ const WriteUpPage: React.FC = () => {
                         >
                             {content}
                         </ReactMarkdown>
+                    </div>
+                ) : (
+                    <div className="p-8 border border-white/5 rounded-2xl bg-white/5 text-center text-text-muted">
+                        Pas de description détaillée disponible pour ce challenge.
                     </div>
                 )}
             </div>

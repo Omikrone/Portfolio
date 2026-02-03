@@ -86,7 +86,7 @@ const Home: React.FC = () => {
                         <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                             <span className="text-2xl">👨‍💻</span>
                         </div>
-                        <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">À propos</h3>
+                        <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">Profil</h3>
                         <p className="text-text-muted text-sm mb-4">
                             Mon parcours, mes compétences techniques et ma stack complète
                         </p>
