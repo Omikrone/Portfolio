@@ -43,7 +43,11 @@ const WriteUpCard: React.FC<WriteUpCardProps> = ({ writeup }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60 z-10" />
                 <img
                     src={writeup.imageUrl || `https://placehold.co/600x400/1a1a2e/0abde3/png?text=${writeup.title}`}
-                    alt={writeup.title}
+                    alt={`Illustration du write-up ${writeup.title}`}
+                    loading="lazy"
+                    decoding="async"
+                    width={600}
+                    height={400}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
             </div>

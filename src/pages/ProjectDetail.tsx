@@ -57,7 +57,10 @@ const ProjectDetail: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10" />
                     <img
                         src={project.imageUrl}
-                        alt={project.title}
+                        alt={`Illustration du projet ${project.title}`}
+                        decoding="async"
+                        width={1200}
+                        height={630}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                 </div>
@@ -108,6 +111,23 @@ const ProjectDetail: React.FC = () => {
                     )}
                 </div>
             </header>
+
+            {/* Skills / Techniques */}
+            {project.skills && project.skills.length > 0 && (
+                <section className="mb-12 max-w-4xl">
+                    <h2 className="text-2xl font-bold mb-4">Techniques, connaissances &amp; compétences</h2>
+                    <ul className="flex flex-wrap gap-2 list-none p-0">
+                        {project.skills.map(skill => (
+                            <li
+                                key={skill}
+                                className="text-sm font-mono bg-white/5 border border-white/10 px-3 py-1 rounded text-text-muted"
+                            >
+                                {skill}
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            )}
 
             {/* Content Body */}
             <div className="max-w-4xl">

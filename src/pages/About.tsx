@@ -56,7 +56,7 @@ const About: React.FC = () => {
                 <div className="glass-card rounded-3xl p-6 md:p-8 lg:p-12">
                     <div className="flex flex-col md:flex-row gap-8 items-start">
                         <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0 overflow-hidden">
-                            <img src="/assets/profile/portrait.jpg" alt="Roman Nitzsche" className="w-full h-full object-cover" />
+                            <img src="/assets/profile/portrait.jpg" alt="Portrait de Roman Nitzsche" loading="lazy" decoding="async" width={128} height={128} className="w-full h-full object-cover" />
                         </div>
 
                         <div className="flex-grow">
