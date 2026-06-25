@@ -5,6 +5,7 @@ export interface Project {
     description: string;
     type: string;
     languages: string[];
+    skills?: string[];
     imageUrl?: string;
     demoLink?: string;
     repoLink?: string;

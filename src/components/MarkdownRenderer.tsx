@@ -118,6 +118,8 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
             <img
                 src={src}
                 alt={alt || ""}
+                loading="lazy"
+                decoding="async"
                 className="rounded-xl shadow-2xl my-8 max-w-full h-auto border border-white/10"
             />
         ),

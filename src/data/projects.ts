@@ -109,12 +109,22 @@ export const projectsData: Project[] = [
     id: 101,
     title: "AntarcticHell",
     slug: "antarctichell",
-    description: "Développement d'un serious game sur les conditions climatiques extrêmes en Antarctique.",
+    description: "Serious game web où l'on incarne l'architecte de la station polaire Concordia : on aménage les étages et gère le bien-être des habitants face aux conditions extrêmes de l'Antarctique.",
     type: "Jeu Vidéo",
-    languages: ["TypeScript"],
+    languages: ["TypeScript", "Vue.js"],
+    skills: [
+      "Vue.js 3 (Composition API)",
+      "TypeScript",
+      "Gestion d'état d'interface réactive",
+      "Conception de mécaniques de jeu (simulation)",
+      "Architecture en composants",
+      "Travail en équipe / méthodologie projet",
+      "Game design pédagogique (serious game)"
+    ],
     imageUrl: getAssetPath("/assets/projects/antarctichell/logo.png"),
     repoLink: "https://github.com/Omikrone/AntarcticHell",
     category: 'school',
+    longDescription: true,
     startYear: 2025,
     endYear: 2025
   },
@@ -155,6 +165,29 @@ export const projectsData: Project[] = [
     category: 'school',
     startYear: 2025,
     endYear: 2025
+  },
+  {
+    id: 105,
+    title: "Níðhöggr — StrasTaRoute",
+    slug: "nidhoggr",
+    description: "Application full-stack (web + mobile + API) de gestion et de planification d'événements sportifs, développée en équipe. Cartographie interactive, placement d'équipements de sécurité, planification des équipes et synchronisation entre l'interface des organisateurs et l'application mobile de terrain.",
+    type: "Développement",
+    languages: ["TypeScript"],
+    skills: [
+      "Angular",
+      "React Native / Expo",
+      "NestJS",
+      "PostgreSQL & Prisma",
+      "Cartographie (Leaflet / MapLibre)",
+      "Travail en équipe"
+    ],
+    imageUrl: getAssetPath("/assets/projects/nidhoggr/logo.png"),
+    repoLink: "https://git.unistra.fr/nidhoggr-25",
+    category: 'school',
+    featured: true,
+    longDescription: true,
+    startYear: 2025,
+    endYear: 2026
   }
 ];
 
