@@ -13,29 +13,36 @@ const timeline: TimelineItem[] = [
         year: '2020 - 2023',
         title: 'BAC Général & Abitur',
         subtitle: 'Lycée International des Pontonniers, Strasbourg',
-        description: 'Spécialités Mathématiques et Physique-Chimie. Obtention du BAC français mention Bien et du BAC allemand (Abitur) en parallèle dans le cadre du cursus international franco-allemand.',
+        description: 'Spécialités Mathématiques et Physique-Chimie, option Maths Expertes. Obtention du BAC français mention Bien (15,76) et du BAC allemand (Abitur, 1.1) en parallèle dans le cadre du cursus international franco-allemand.',
         type: 'education'
     },
     {
         year: '2023 - 2026',
-        title: 'BUT Informatique',
+        title: 'BUT Informatique — Mention Bien',
         subtitle: 'IUT Robert Schuman, Illkirch',
-        description: 'Formation en développement logiciel, bases de données, réseaux, algorithmique et intelligence artificielle. Parcours orienté vers le développement d\'applications.',
+        description: 'Parcours Réalisation d\'Applications, 3e année en alternance. Développement web et mobile (Laravel, React, Android), systèmes (Linux, C) et bases de données (Oracle, PL/SQL).',
         type: 'education'
     },
     {
         year: '2025',
-        title: 'Stage - Développeur IA',
-        subtitle: 'Zen Conseil (2,5 mois)',
-        description: 'Développement d\'un chatbot de support technique intelligent basé sur la technique RAG (Retrieval-Augmented Generation) pour le support technique. Utilisation de Python, FAISS et des modèles de langage.',
+        title: 'Stage - Développeur IA & Web',
+        subtitle: 'Zen Conseil, Illkirch (avril - juin 2025)',
+        description: 'Conception et mise en production d\'un chatbot de support basé sur une architecture RAG : vectorisation sémantique des documents internes (embeddings), recherche de similarité avec FAISS, génération via un LLM auto-hébergé (Ollama) et interface web en Angular.',
         type: 'work'
     },
     {
         year: '2025 - 2026',
-        title: 'Alternance - Développeur',
-        subtitle: 'Cabinet d\'étude de la qualité de l\'air',
-        description: 'Développement d\'interfaces web pour afficher et manier les résultats d\'études de la qualité de l\'air. Programmation embarquée pour ajouter des fonctionnalités aux capteurs.',
+        title: 'Alternance - Développeur R&D Fullstack',
+        subtitle: 'Air&D, Strasbourg',
+        description: 'Un an au sein d\'une équipe de recherche sur un jumeau numérique de qualité de l\'air urbain (approche hybride IA - physique) : application de gestion des données d\'études de mécanique des fluides numérique (CFD) et développement embarqué sur cartes ESP32.',
         type: 'work'
+    },
+    {
+        year: '2026 - 2029',
+        title: 'Diplôme d\'Ingénieur - Informatique',
+        subtitle: 'INSA Lyon',
+        description: 'Département Informatique (IF), admission directe en 3e année.',
+        type: 'education'
     }
 ];
 
@@ -47,8 +54,8 @@ const About: React.FC = () => {
                     Profil
                 </h1>
                 <p className="text-base md:text-xl text-text-muted max-w-3xl leading-relaxed">
-                    Développeur passionné avec 7 ans d'expérience en programmation, je me spécialise 
-                    dans l'intelligence artificielle et la cybersécurité.
+                    Élève-ingénieur à l'INSA Lyon, passionné par l'intelligence artificielle
+                    et la cybersécurité.
                 </p>
             </section>
 
@@ -62,8 +69,11 @@ const About: React.FC = () => {
                         <div className="flex-grow">
                             <h2 className="text-2xl md:text-3xl font-bold mb-4">Roman Nitzsche</h2>
                             <p className="text-text-muted leading-relaxed mb-6">
-                                Étudiant en BUT Informatique à l'IUT d'Illkirch, je me passionne pour le développement
+                                Élève-ingénieur en 3e année au département Informatique de l'INSA Lyon, après un
+                                BUT Informatique à l'IUT d'Illkirch, je me passionne pour le développement
                                 de projets innovants mêlant programmation bas-niveau et intelligence artificielle.
+                                J'ai déjà deux expériences en entreprise : un an d'alternance en R&D et un stage
+                                conclu par la mise en production d'une solution d'IA générative.
                                 Mon parcours franco-allemand m'a apporté une ouverture d'esprit et une rigueur
                                 que j'applique dans chacun de mes projets.
                             </p>
@@ -80,7 +90,7 @@ const About: React.FC = () => {
                                     <div className="text-[10px] md:text-xs text-text-muted">Années de pratique</div>
                                 </div>
                                 <div className="text-center p-3 md:p-4 rounded-xl bg-white/5">
-                                    <div className="text-xl md:text-2xl font-bold text-primary">8</div>
+                                    <div className="text-xl md:text-2xl font-bold text-primary">9</div>
                                     <div className="text-[10px] md:text-xs text-text-muted">Langages de programmation</div>
                                 </div>
                                 <div className="text-center p-3 md:p-4 rounded-xl bg-white/5">
@@ -122,14 +132,14 @@ const About: React.FC = () => {
                                 <span className="text-lg">🇬🇧</span>
                                 <h4 className="font-semibold text-white">Anglais</h4>
                             </div>
-                            <p className="text-sm text-text-muted">Maîtrise fluide</p>
+                            <p className="text-sm text-text-muted">B2</p>
                         </div>
                         <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                             <div className="flex items-center gap-2 mb-2">
                                 <span className="text-lg">🇨🇳</span>
                                 <h4 className="font-semibold text-white">Chinois</h4>
                             </div>
-                            <p className="text-sm text-text-muted">En apprentissage</p>
+                            <p className="text-sm text-text-muted">A2 — en apprentissage</p>
                         </div>
                     </div>
                 </div>
@@ -143,7 +153,7 @@ const About: React.FC = () => {
                         <div>
                             <h4 className="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Langages de Programmation</h4>
                             <div className="flex flex-wrap gap-2">
-                                {['Python', 'C/C++', 'TypeScript', 'JavaScript', 'Java', 'C#', 'Bash', 'PHP', 'SQL'].map((lang) => (
+                                {['Python', 'C/C++', 'TypeScript', 'JavaScript', 'Java', 'Kotlin', 'C#', 'Bash', 'PHP', 'SQL'].map((lang) => (
                                     <span key={lang} className="px-4 py-2 rounded-lg bg-primary/10 border border-primary/30 text-white text-sm font-medium">
                                         {lang}
                                     </span>
@@ -154,7 +164,7 @@ const About: React.FC = () => {
                         <div>
                             <h4 className="text-sm font-semibold text-secondary uppercase tracking-wide mb-3">Frameworks & Libraries</h4>
                             <div className="flex flex-wrap gap-2">
-                                {['React', 'Angular', 'Laravel', 'Express', 'Next.js', 'React Native'].map((framework) => (
+                                {['React', 'Angular', 'Laravel', 'NestJS', 'Express', 'Next.js', 'React Native', 'Jetpack Compose'].map((framework) => (
                                     <span key={framework} className="px-4 py-2 rounded-lg bg-secondary/10 border border-secondary/30 text-white text-sm font-medium">
                                         {framework}
                                     </span>

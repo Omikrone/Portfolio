@@ -13,13 +13,13 @@ const Hero: React.FC = () => {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
                     Je suis <span className="text-white">Roman</span>, <br />
                     <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                        Étudiant en informatique
+                        Élève-ingénieur en informatique
                     </span>
                 </h1>
                 <p className="text-text-muted text-base md:text-lg lg:text-xl max-w-2xl leading-relaxed">
-                    Étudiant en 3ème année de <span className="text-white font-medium">BUT Informatique</span> en alternance.
-                    Passionné par l'<span className="text-primary font-medium">Intelligence Artificielle</span> et la <span className="text-secondary font-medium">Cybersécurité</span>.
-                    J'explore les technologies de demain.
+                    Élève-ingénieur en 3ème année au département Informatique de l'<span className="text-white font-medium">INSA Lyon</span>.
+                    Passionné par l'<span className="text-primary font-medium">Intelligence Artificielle</span> et la <span className="text-secondary font-medium">Cybersécurité</span>,
+                    je recherche un <span className="text-white font-medium">stage de 10 semaines</span> (juin - août 2027) dans ces domaines.
                 </p>
 
                 <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 pt-4">

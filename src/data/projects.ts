@@ -20,6 +20,29 @@ export const projectsData: Project[] = [
     endYear: 2026
   },
   {
+    id: 8,
+    title: "Hanzi Coach",
+    slug: "hanzi-coach",
+    description: "Application Android hors ligne pour apprendre à lire et écrire le chinois (HSK 1 à 6) : tracé vérifié trait par trait, répétition espacée FSRS 6 et rythme d'apprentissage auto-régulé.",
+    type: "Mobile",
+    languages: ["Kotlin", "Python"],
+    skills: [
+      "Jetpack Compose / Material 3",
+      "Room & DataStore",
+      "Algorithme FSRS 6",
+      "Reconnaissance géométrique de tracés",
+      "Pipeline de données Python",
+      "Tests & CI GitHub Actions"
+    ],
+    imageUrl: getAssetPath("/assets/projects/hanzi-coach/logo.png"),
+    repoLink: "https://github.com/Omikrone/HSK-Trainer",
+    category: 'personal',
+    featured: true,
+    longDescription: true,
+    startYear: 2026,
+    endYear: 2026
+  },
+  {
     id: 2,
     title: "Chessboard Library",
     slug: "chessboard",

@@ -29,6 +29,11 @@ export const projectTypeColors: Record<string, TagColor> = {
         bg: "bg-pink-500/10",
         border: "border-pink-500/20",
         text: "text-pink-400"
+    },
+    "Mobile": {
+        bg: "bg-lime-500/10",
+        border: "border-lime-500/20",
+        text: "text-lime-400"
     }
 };
 
@@ -57,6 +62,11 @@ export const languageColors: Record<string, TagColor> = {
         bg: "bg-yellow-500/10",
         border: "border-yellow-500/20",
         text: "text-yellow-400"
+    },
+    "Kotlin": {
+        bg: "bg-fuchsia-500/10",
+        border: "border-fuchsia-500/20",
+        text: "text-fuchsia-400"
     }
 };
 
