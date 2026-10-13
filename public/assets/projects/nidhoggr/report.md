@@ -1,4 +1,4 @@
-# Níðhöggr — StrasTaRoute
+# Níðhöggr : StrasTaRoute
 
 ## Présentation du projet
 
@@ -12,10 +12,10 @@ Le projet a été pensé comme un **système complet** : une interface web pour 
 
 StrasTaRoute est organisé en **plusieurs dépôts** correspondant chacun à un service :
 
-- **`str-web`** — Interface web d'administration développée en **Angular** (avec Angular Material). C'est l'outil principal des organisateurs.
-- **`str-mobile`** — Application mobile en **React Native / Expo**, destinée aux équipes sur le terrain (consultation du planning, géolocalisation, prises de photos).
-- **`str-api`** — API REST développée avec **NestJS**, s'appuyant sur **PostgreSQL** et l'ORM **Prisma**, avec authentification **JWT**.
-- **`str-ci`** — Outils d'**intégration continue** (GitLab CI), git hooks et déploiement via **Docker**.
+- **`str-web`** : interface web d'administration développée en **Angular** (avec Angular Material). C'est l'outil principal des organisateurs.
+- **`str-mobile`** : application mobile en **React Native / Expo**, destinée aux équipes sur le terrain (consultation du planning, géolocalisation, prises de photos).
+- **`str-api`** : API REST développée avec **NestJS**, s'appuyant sur **PostgreSQL** et l'ORM **Prisma**, avec authentification **JWT**.
+- **`str-ci`** : outils d'**intégration continue** (GitLab CI), git hooks et déploiement via **Docker**.
 
 Cette séparation en services indépendants nous a permis de **travailler en parallèle** au sein de l'équipe tout en maintenant des interfaces claires entre les composants.
 

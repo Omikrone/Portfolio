@@ -13,12 +13,12 @@ const timeline: TimelineItem[] = [
         year: '2020 - 2023',
         title: 'Baccalauréat & Abitur',
         subtitle: 'Lycée International des Pontonniers, Strasbourg',
-        description: 'Section internationale allemande — l\'Option Internationale du Baccalauréat (OIB), renommée depuis Baccalauréat Français International (BFI). Ce cursus délivre à la fois le baccalauréat français, obtenu mention Bien (15,76), et l\'Abitur allemand (Allgemeine deutsche Hochschulreife), obtenu avec 1.1. Spécialités Mathématiques et Physique-Chimie, option Maths Expertes.',
+        description: 'Section internationale allemande, dans le cadre de l\'Option Internationale du Baccalauréat (OIB), renommée depuis Baccalauréat Français International (BFI). Ce cursus délivre à la fois le baccalauréat français, obtenu mention Bien (15,76), et l\'Abitur allemand (Allgemeine deutsche Hochschulreife), obtenu avec 1.1. Spécialités Mathématiques et Physique-Chimie, option Maths Expertes.',
         type: 'education'
     },
     {
         year: '2023 - 2026',
-        title: 'BUT Informatique — Mention Bien',
+        title: 'BUT Informatique, mention Bien',
         subtitle: 'IUT Robert Schuman, Illkirch',
         description: 'Parcours Réalisation d\'Applications, 3e année en alternance. Développement web et mobile (Laravel, React, Android), systèmes (Linux, C) et bases de données (Oracle, PL/SQL).',
         type: 'education'
@@ -54,8 +54,8 @@ const About: React.FC = () => {
                     Profil
                 </h1>
                 <p className="text-base md:text-xl text-text-muted max-w-3xl leading-relaxed">
-                    Élève-ingénieur à l'INSA Lyon, passionné par l'intelligence artificielle
-                    et la cybersécurité.
+                    Élève-ingénieur à l'INSA Lyon, orienté intelligence artificielle
+                    et cybersécurité.
                 </p>
             </section>
 
@@ -69,19 +69,23 @@ const About: React.FC = () => {
                         <div className="flex-grow">
                             <h2 className="text-2xl md:text-3xl font-bold mb-4">Roman Nitzsche</h2>
                             <p className="text-text-muted leading-relaxed mb-6">
-                                Élève-ingénieur en 3e année au département Informatique de l'INSA Lyon, après un
-                                BUT Informatique à l'IUT d'Illkirch, je me passionne pour le développement
-                                de projets innovants mêlant programmation bas-niveau et intelligence artificielle.
-                                J'ai déjà deux expériences en entreprise : un an d'alternance en R&D et un stage
-                                conclu par la mise en production d'une solution d'IA générative.
-                                Mon parcours franco-allemand m'a apporté une ouverture d'esprit et une rigueur
-                                que j'applique dans chacun de mes projets.
+                                Élève-ingénieur en 3e année au département Informatique de l'INSA Lyon,
+                                après un BUT Informatique à l'IUT d'Illkirch. Ce qui m'intéresse, c'est
+                                de reconstruire les choses pour comprendre comment elles marchent : un
+                                modèle de langage avec NumPy et rien d'autre, un moteur d'échecs en C++,
+                                une application Android qui vérifie le tracé des caractères chinois trait
+                                par trait.
                             </p>
                             <p className="text-text-muted leading-relaxed mb-6">
-                                Avec 7 ans d'expérience en programmation, mes centres d'intérêt tournent principalement 
-                                autour de l'<span className="text-white font-medium">intelligence artificielle</span> et 
-                                de la <span className="text-white font-medium">cybersécurité</span>, deux domaines 
-                                complémentaires qui me permettent d'explorer la technologie sous différents angles.
+                                Côté entreprise, j'ai un an d'alternance en R&D et un stage de trois mois
+                                conclu par la mise en production d'un chatbot de support à base d'IA
+                                générative. Je suis franco-allemand et j'ai passé le baccalauréat et
+                                l'Abitur en section internationale.
+                            </p>
+                            <p className="text-text-muted leading-relaxed mb-6">
+                                Je programme depuis 7 ans. Mes deux terrains sont l'<span className="text-white font-medium">intelligence artificielle</span> et
+                                la <span className="text-white font-medium">cybersécurité</span>, cette dernière surtout en pratique :
+                                Root-Me, CTF et compétitions.
                             </p>
 
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-6 md:mt-8">
@@ -139,7 +143,7 @@ const About: React.FC = () => {
                                 <span className="text-lg">🇨🇳</span>
                                 <h4 className="font-semibold text-white">Chinois</h4>
                             </div>
-                            <p className="text-sm text-text-muted">A2 — en apprentissage</p>
+                            <p className="text-sm text-text-muted">A2, en apprentissage</p>
                         </div>
                     </div>
                 </div>
@@ -251,7 +255,8 @@ const About: React.FC = () => {
                 <div className="glass-card rounded-3xl p-8 md:p-12">
                     <h2 className="text-2xl md:text-3xl font-bold mb-4">Envie de collaborer ?</h2>
                     <p className="text-text-muted mb-8 max-w-xl mx-auto">
-                        Je suis toujours ouvert aux nouvelles opportunités et aux projets intéressants.
+                        Je cherche un stage de 10 semaines en IA ou en cybersécurité, de juin à
+                        août 2027. Pour le reste, écrivez-moi.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <a

@@ -1,4 +1,4 @@
-# AntarcticHell — Survivre à l'enfer blanc
+# AntarcticHell : survivre à l'enfer blanc
 
 ## Présentation du projet
 

@@ -15,7 +15,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     if (!project.endYear || project.startYear === project.endYear) {
       return project.startYear.toString();
     }
-    return `${project.startYear} — ${project.endYear}`;
+    return `${project.startYear} - ${project.endYear}`;
   };
 
   return (

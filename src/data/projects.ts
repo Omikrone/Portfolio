@@ -191,7 +191,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 105,
-    title: "Níðhöggr — StrasTaRoute",
+    title: "Níðhöggr - StrasTaRoute",
     slug: "nidhoggr",
     description: "Application full-stack (web + mobile + API) de gestion et de planification d'événements sportifs, développée en équipe. Cartographie interactive, placement d'équipements de sécurité, planification des équipes et synchronisation entre l'interface des organisateurs et l'application mobile de terrain.",
     type: "Développement",

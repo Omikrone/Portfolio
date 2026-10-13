@@ -1,4 +1,4 @@
-# Hanzi Coach — HSK Trainer
+# Hanzi Coach : HSK Trainer
 
 ## Présentation du projet
 
@@ -14,7 +14,7 @@ Les révisions sont planifiées avec l'algorithme de **répétition espacée FSR
 
 - **Écriture vérifiée trait par trait** : nombre, ordre, direction et géométrie de chaque trait sont contrôlés, en mode guidé ou libre. Un rattrapage manuel couvre les cas où la reconnaissance se trompe.
 - **Cinq types d'exercice** : tracé d'un caractère, tracé d'un mot case par case, reconnaissance du sens parmi quatre propositions, saisie du pinyin avec les tons, et phrases à trou tirées de phrases authentiques.
-- **Une mémoire par compétence** : écrire, reconnaître et prononcer ont chacun leur propre état FSRS — savoir lire un caractère ne dit rien de la capacité à l'écrire.
+- **Une mémoire par compétence** : écrire, reconnaître et prononcer ont chacun leur propre état FSRS : savoir lire un caractère ne dit rien de la capacité à l'écrire.
 
 ## Un rythme qui se régule tout seul
 

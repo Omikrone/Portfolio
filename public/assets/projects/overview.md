@@ -1,4 +1,4 @@
-# Projet Échecs — Vue d’ensemble
+# Projet Échecs : vue d’ensemble
 
 ## Contexte
 
@@ -9,7 +9,7 @@ Ce contraste m’a donné envie de comprendre comment un moteur d’échecs fonc
 
 ## Motivations & objectifs
 
-L’objectif principal de ce projet était de comprendre en profondeur le fonctionnement d’un moteur d’échecs au niveau algorithmique, afin de pouvoir concevoir un programme capable, à terme, de rivaliser avec un joueur humain — voire de me surpasser.
+L’objectif principal de ce projet était de comprendre en profondeur le fonctionnement d’un moteur d’échecs au niveau algorithmique, afin de pouvoir concevoir un programme capable, à terme, de rivaliser avec un joueur humain, voire de me surpasser.
 
 Dans cette optique, j’ai fait le choix volontaire de ne pas utiliser de bibliothèques “clé en main”, à l’exception des outils nécessaires aux communications réseau. Cette contrainte m’a permis d’aborder chaque problématique de manière progressive et maîtrisée, depuis la représentation du jeu jusqu’à la recherche de coups optimaux.
 
