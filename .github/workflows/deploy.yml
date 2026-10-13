@@ -1,9 +1,14 @@
 name: Build & Deploy Portfolio
 
+# L'environnement github-pages n'accepte les deploiements que depuis la
+# branche par defaut : se declencher sur toutes les branches ne produisait
+# que des echecs, et le groupe de concurrence annulait au passage le
+# deploiement legitime de main.
 on:
   push:
     branches:
-        - '**'
+        - main
+  workflow_dispatch:
 
 permissions:
   contents: read
