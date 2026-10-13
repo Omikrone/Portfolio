@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import ProjectCard from '../components/ProjectCard';
-import { projectsData } from '../data/projects';
+import { getSortedProjects } from '../data/projects';
 
 const Home: React.FC = () => {
-    const featuredProjects = projectsData
+    // « les plus récents » : on trie, au lieu de prendre l'ordre du tableau.
+    const featuredProjects = getSortedProjects()
         .filter(project => project.featured)
         .slice(0, 3);
 

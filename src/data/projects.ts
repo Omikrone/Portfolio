@@ -4,22 +4,6 @@ const getAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path.replac
 
 export const projectsData: Project[] = [
   {
-    id: 1,
-    title: "Mnemos",
-    slug: "mnemos",
-    description: "Un modèle de langage (LLM) implémenté from scratch en Python, basé sur l'architecture Transformer.",
-    type: "IA",
-    languages: ["Python"],
-    imageUrl: getAssetPath("/assets/projects/mnemos/logo.png"),
-    demoLink: "http://mnemos.duckdns.org:49182",
-    repoLink: "https://github.com/Omikrone/Mnemos",
-    category: 'personal',
-    featured: true,
-    longDescription: true,
-    startYear: 2025,
-    endYear: 2026
-  },
-  {
     id: 8,
     title: "Hanzi Coach",
     slug: "hanzi-coach",
@@ -40,6 +24,22 @@ export const projectsData: Project[] = [
     featured: true,
     longDescription: true,
     startYear: 2026,
+    endYear: 2026
+  },
+  {
+    id: 1,
+    title: "Mnemos",
+    slug: "mnemos",
+    description: "Un modèle de langage (LLM) implémenté from scratch en Python, basé sur l'architecture Transformer.",
+    type: "IA",
+    languages: ["Python"],
+    imageUrl: getAssetPath("/assets/projects/mnemos/logo.png"),
+    demoLink: "http://mnemos.duckdns.org:49182",
+    repoLink: "https://github.com/Omikrone/Mnemos",
+    category: 'personal',
+    featured: true,
+    longDescription: true,
+    startYear: 2025,
     endYear: 2026
   },
   {
