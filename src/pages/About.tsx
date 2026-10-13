@@ -11,9 +11,9 @@ interface TimelineItem {
 const timeline: TimelineItem[] = [
     {
         year: '2020 - 2023',
-        title: 'BAC Général & Abitur',
+        title: 'Baccalauréat & Abitur',
         subtitle: 'Lycée International des Pontonniers, Strasbourg',
-        description: 'Spécialités Mathématiques et Physique-Chimie, option Maths Expertes. Obtention du BAC français mention Bien (15,76) et du BAC allemand (Abitur, 1.1) en parallèle dans le cadre du cursus international franco-allemand.',
+        description: 'Section internationale allemande — l\'Option Internationale du Baccalauréat (OIB), renommée depuis Baccalauréat Français International (BFI). Ce cursus délivre à la fois le baccalauréat français, obtenu mention Bien (15,76), et l\'Abitur allemand (Allgemeine deutsche Hochschulreife), obtenu avec 1.1. Spécialités Mathématiques et Physique-Chimie, option Maths Expertes.',
         type: 'education'
     },
     {
@@ -90,7 +90,7 @@ const About: React.FC = () => {
                                     <div className="text-[10px] md:text-xs text-text-muted">Années de pratique</div>
                                 </div>
                                 <div className="text-center p-3 md:p-4 rounded-xl bg-white/5">
-                                    <div className="text-xl md:text-2xl font-bold text-primary">9</div>
+                                    <div className="text-xl md:text-2xl font-bold text-primary">10</div>
                                     <div className="text-[10px] md:text-xs text-text-muted">Langages de programmation</div>
                                 </div>
                                 <div className="text-center p-3 md:p-4 rounded-xl bg-white/5">
@@ -167,6 +167,28 @@ const About: React.FC = () => {
                                 {['React', 'Angular', 'Laravel', 'NestJS', 'Express', 'Next.js', 'React Native', 'Jetpack Compose'].map((framework) => (
                                     <span key={framework} className="px-4 py-2 rounded-lg bg-secondary/10 border border-secondary/30 text-white text-sm font-medium">
                                         {framework}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 className="text-sm font-semibold text-primary uppercase tracking-wide mb-3">IA & Données</h4>
+                            <div className="flex flex-wrap gap-2">
+                                {['NumPy', 'LLM & RAG', 'Embeddings / FAISS', 'Ollama', 'Oracle / PL/SQL'].map((item) => (
+                                    <span key={item} className="px-4 py-2 rounded-lg bg-primary/10 border border-primary/30 text-white text-sm font-medium">
+                                        {item}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 className="text-sm font-semibold text-secondary uppercase tracking-wide mb-3">Cybersécurité</h4>
+                            <div className="flex flex-wrap gap-2">
+                                {['Burp Suite', 'Wireshark', 'GDB', 'Radare2'].map((item) => (
+                                    <span key={item} className="px-4 py-2 rounded-lg bg-secondary/10 border border-secondary/30 text-white text-sm font-medium">
+                                        {item}
                                     </span>
                                 ))}
                             </div>
