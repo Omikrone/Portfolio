@@ -3,13 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 @theme {
-  --color-background: #0a0a0a;
-  --color-surface: #1a1a1a;
-  --color-primary: #6366f1;
-  --color-secondary: #ec4899;
-  --color-accent: #8b5cf6;
-  --color-text-main: #ffffff;
-  --color-text-muted: #a3a3a3;
+  /* Palette reprise du CV : bandeau bleu petrole #00537c, fond creme #f6f5e5.
+     Les teintes de marque sont des versions eclaircies du bleu du CV, pour
+     tenir le contraste sur fond sombre (le #00537c brut n'y donne que 2,4:1). */
+  --color-background: #07121a;
+  --color-surface: #102029;
+  --color-primary: #3FA7D6;
+  --color-secondary: #E8B44C;
+  --color-accent: #7FD6C4;
+  --color-text-main: #f6f5e5;
+  --color-text-muted: #9FB1BC;
 
   --font-sans: "Inter", sans-serif;
   --font-heading: "Outfit", sans-serif;
@@ -90,7 +93,7 @@ h6 {
 }
 
 .glass-card {
-  background: rgba(26, 26, 26, 0.5);
+  background: rgba(16, 32, 41, 0.5);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
@@ -102,14 +105,14 @@ h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #07121a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #262626;
+  background: #1b2f3a;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #404040;
+  background: #2a4756;
 }

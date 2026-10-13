@@ -58,7 +58,7 @@ const ProjectDetailPage = () => {
         </p>
         <Link
           to="/"
-          className="inline-flex items-center px-4 py-2 bg-primary text-white rounded-md hover:bg-slate-800 transition"
+          className="inline-flex items-center px-4 py-2 bg-primary text-background rounded-md hover:bg-slate-800 transition"
         >
           ← Retour à l'accueil
         </Link>
@@ -113,7 +113,7 @@ const ProjectDetailPage = () => {
               href={project.demoLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-5 py-3 bg-primary text-white rounded-lg hover:bg-slate-800 transition font-medium"
+              className="inline-flex items-center px-5 py-3 bg-primary text-background rounded-lg hover:bg-slate-800 transition font-medium"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />

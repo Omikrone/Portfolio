@@ -89,7 +89,7 @@ const Cybersecurity: React.FC = () => {
                         href="https://www.root-me.org/Omikrone"
                         target="_blank"
                         rel="noreferrer"
-                        className="w-full md:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg border border-secondary/50 text-secondary hover:bg-secondary hover:text-white transition-all font-medium text-xs md:text-sm text-center whitespace-nowrap"
+                        className="w-full md:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg border border-secondary/50 text-secondary hover:bg-secondary hover:text-background transition-all font-medium text-xs md:text-sm text-center whitespace-nowrap"
                     >
                         Voir le profil →
                     </a>
@@ -116,7 +116,7 @@ const Cybersecurity: React.FC = () => {
                             onClick={() => toggleCategory(category)}
                             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all border ${
                                 selectedCategories.includes(category)
-                                    ? 'bg-primary border-primary text-white'
+                                    ? 'bg-primary border-primary text-background'
                                     : 'bg-background/50 text-text-muted border-white/10 hover:border-white/30'
                             }`}
                         >

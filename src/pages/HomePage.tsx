@@ -14,7 +14,7 @@ const Home: React.FC = () => {
           Étudiant en 3ème année de BUT Informatique. Passionné par le développement fullstack et l'architecture logicielle.
         </p>
         <div className="mt-8 flex justify-center sm:justify-start gap-4">
-            <a href="#projets" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-slate-800 transition">
+            <a href="#projets" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-background bg-primary hover:bg-slate-800 transition">
                 Voir mes projets
             </a>
             {/* Lien vers ton CV PDF par exemple */}

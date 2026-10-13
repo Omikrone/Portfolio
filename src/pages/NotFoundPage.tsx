@@ -12,7 +12,7 @@ const NotFoundPage = () => {
       </p>
       <Link
         to="/"
-        className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-slate-800 transition font-medium"
+        className="inline-flex items-center px-6 py-3 bg-primary text-background rounded-lg hover:bg-slate-800 transition font-medium"
       >
         Retour à l'accueil
       </Link>
